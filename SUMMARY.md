@@ -1,11 +1,11 @@
 # Table of contents
 
-* [Course Introduction](README.md)
+* [Introduction](README.md)
 * [Syllabus](syllabus.md)
-* [Preparation](preparation.md)
 
 ## Industrial AI
 
+* [Preparation](industrial-ai/preparation.md)
 * [Tutorial](industrial-ai/tutorial.md)
 * [Assignment](industrial-ai/assignment/README.md)
   * [1. Pre-Processing & Feature Extraction](industrial-ai/assignment/1.-pre-processing-and-feature-extraction.md)

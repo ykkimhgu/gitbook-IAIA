@@ -26,3 +26,10 @@
 [open-dataset-for-phm.md](open-dataset-for-phm.md)
 {% endcontent-ref %}
 
+
+
+### Other Public Dataset for PHM
+
+
+
+{% embed url="https://github.com/ykkimhgu/HGU_IAIA/blob/main/PHM%20Dataset%20list%20journal.pdf" %}
