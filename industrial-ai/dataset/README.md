@@ -2,26 +2,27 @@
 
 ### CWRU Bearing Dataset
 
-#### Introduction
+{% content-ref url="cwru-dataset.md" %}
+[cwru-dataset.md](cwru-dataset.md)
+{% endcontent-ref %}
 
 
 
 ### HGU Bearing Dataset
 
-#### Introduction
-
-https://github.com/ykkimhgu/HGU\_IAIA/blob/main/HGU%20Bearing%20Dataset%20Description.md
+{% content-ref url="hgu-bearing-dataset.md" %}
+[hgu-bearing-dataset.md](hgu-bearing-dataset.md)
+{% endcontent-ref %}
 
 #### Dataset
 
-* HGU bearing dataset v1
-
-[HGU\_bearing\_dataset\_v1.mat](https://drive.google.com/file/d/1bkB45JlS0Z7lILDIBCOj2u4NZzHTqn9i/view?usp=share_link)
+* [HGU\_bearing\_dataset\_v1.mat](https://drive.google.com/file/d/1bkB45JlS0Z7lILDIBCOj2u4NZzHTqn9i/view?usp=share_link)
 
 ***
 
 ### PHM Open Dataset
 
-#### Introduction
+{% content-ref url="open-dataset-for-phm.md" %}
+[open-dataset-for-phm.md](open-dataset-for-phm.md)
+{% endcontent-ref %}
 
-https://github.com/ykkimhgu/HGU\_IAIA/blob/main/DTA\_OpenDataset4PHM.md
