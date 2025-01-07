@@ -50,7 +50,7 @@
 1. `Person.msg` **수정**:
    *   `msg/Person.msg` 파일에 새로운 필드를 추가합니다:
 
-       ```rosmsg
+       ```cpp
        string name
        int32 age
        float32 height
