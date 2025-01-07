@@ -47,7 +47,7 @@ echo $ROS_PACKAGE_PATH
 ## 2. ROS Build System
 
 * **Catkin**은 ROS의 빌드 시스템이다.
-* \*\*CMake(Cross Platform Make)\*\*를 기본적으로 이용.
+* **CMake\(Cross Platform Make\)**를 기본적으로 이용.
 * `CMakeList.txt`라는 파일에 빌드 환경을 기술해야 함.
 
 정리: CMake를 이용하여, ROS 환경에 알맞게 Catkin 빌드 시스템을 만들었으며, ROS 관련 빌드, 패키지 관리, 패키지 간 의존성 등을 편리하게 사용할 수 있게 되었다.
