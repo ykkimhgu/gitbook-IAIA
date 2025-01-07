@@ -2,9 +2,9 @@
 
 ## 1. Anaconda Installer
 
-* Download anaconda Installer: [link](https://www.anaconda.com/download/success) ![](https://github.com/user-attachments/assets/1a60754e-35f1-4c9d-b42f-154df6e332ef)
+* Download anaconda Installer: [link](https://www.anaconda.com/download/success)
+ ![](https://github.com/user-attachments/assets/1a60754e-35f1-4c9d-b42f-154df6e332ef)
 
-&#x20;
 
 ## 2. Execute Installer File (shell script)
 
@@ -18,7 +18,6 @@ sudo bash Anaconda3_*.sh	# shell script 실행
 
 [reference link](https://record-everything.tistory.com/entry/Ubuntu-2004-%EC%9A%B0%EB%B6%84%ED%88%AC%EC%97%90-%EC%95%84%EB%82%98%EC%BD%98%EB%8B%A4-%EC%84%A4%EC%B9%98-%EB%B0%8F-Python-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95)
 
-&#x20;
 
 ## 3. Initialize bashrc
 
