@@ -10,7 +10,6 @@ sudo apt install curl # if you haven't already installed curl
 curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
 ```
 
-&#x20;
 
 ## 2. Installation
 
@@ -19,7 +18,6 @@ sudo apt update
 sudo apt install ros-noetic-desktop-full
 ```
 
-&#x20;
 
 ## 3. Environment setup
 
@@ -29,7 +27,6 @@ echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 ```
 
-&#x20;
 
 ## 4. Dependencies for building packages
 
@@ -37,7 +34,6 @@ source ~/.bashrc
 sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
 ```
 
-&#x20;
 
 ## 5. Initialize rosdep
 
@@ -46,7 +42,6 @@ sudo rosdep init
 rosdep update
 ```
 
-&#x20;
 
 ## 6. Create a ROS Workspace
 
