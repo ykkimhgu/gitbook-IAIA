@@ -50,7 +50,7 @@
 1. `Person.msg` **수정**:
    *   `msg/Person.msg` 파일에 새로운 필드를 추가합니다:
 
-       ```
+       ```msg
        string name
        int32 age
        float32 height
@@ -62,29 +62,29 @@
 3. **Python 퍼블리셔 및 서브스크라이버 수정**:
    *   퍼블리셔:
 
-       ```
+       ```python
        msg.is_student = True
        ```
    *   서브스크라이버:
 
-       ```
+       ```python
        rospy.loginfo(f"Received: Name={data.name}, Age={data.age}, Height={data.height}, Student Status: {data.is_student}")
        ```
 4. **C++ 퍼블리셔 및 서브스크라이버 수정**:
    *   퍼블리셔:
 
-       ```
+       ```cpp
        msg.is_student = true;
        ROS_INFO("Publishing: Name=%s, Age=%d, Height=%.2f, Student Status: %s", msg.name.c_str(), msg.age, msg.height, msg.is_student ? "True" : "False");
        ```
    *   서브스크라이버:
 
-       ```
+       ```cpp
        ROS_INFO("Received: Name=%s, Age=%d, Height=%.2f, Student Status: %s", msg->name.c_str(), msg->age, msg->height, msg->is_student ? "True" : "False");
        ```
 5.  **워크스페이스 빌드 및 실행**:
 
-    ```
+    ```bash
     cd ~/catkin_ws
     catkin_make
 
