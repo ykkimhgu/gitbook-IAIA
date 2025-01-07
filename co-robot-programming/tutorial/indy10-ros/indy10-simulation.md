@@ -38,7 +38,6 @@ catkin_ws/src
 └── indy10_moveit_config
 ```
 
-&#x20;
 
 ## Demo 1: Simple Move
 
@@ -103,7 +102,6 @@ if __name__ == "__main__":
     main()
 ```
 
-&#x20;
 
 ## Demo 2: Pick & Place
 
@@ -191,7 +189,6 @@ if __name__ == '__main__':
     main()
 ```
 
-&#x20;
 
 ## Demo 3: Pet Feeder Robot
 
