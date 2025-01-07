@@ -10,7 +10,7 @@
 * `ur_python`
 * `ur5e_rg2_moveit_config`
 
-패키지가 없으면, [Github-Industrial-AI-Automation\_HGU](https://github.com/ykkimhgu/HGU_IAIA/blob/main/Tutorial/TU_ROS/tutorial/ros/ros-install-packages-for-robot.md) 자료의 Ohter packages 내용 참고해서 다운.
+패키지가 없으면, [ROS Packages for Robots](co-robot-programming/installation/ros/ros-packages-for-robots.md) 자료내용 참고해서 다운.
 
 ## Execution Flow
 
