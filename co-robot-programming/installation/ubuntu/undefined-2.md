@@ -15,7 +15,10 @@ sudo apt install terminator
   * Terminator 실행 후, 우클릭하여 preferences 진입
   *   `Keybindings` 탭에서 단축키 설정을 할 수 있다.
 
-      ![image](https://user-images.githubusercontent.com/91526930/234408076-368a309d-d892-4eaa-8d08-6c46c1c9ec07.png) ![image](https://user-images.githubusercontent.com/91526930/234409352-b6e1a5b2-175f-4ed0-b5b9-85615b121c9a.png) ![image](https://user-images.githubusercontent.com/91526930/234408233-4b967aae-798f-46f6-94d3-bbb5a2a280f5.png) ![image](https://user-images.githubusercontent.com/91526930/234409439-7d409b57-2931-4eb7-98c7-4c080197f583.png)
+      ![](https://user-images.githubusercontent.com/91526930/234408076-368a309d-d892-4eaa-8d08-6c46c1c9ec07.png)
+      ![](https://user-images.githubusercontent.com/91526930/234409352-b6e1a5b2-175f-4ed0-b5b9-85615b121c9a.png)
+      ![](https://user-images.githubusercontent.com/91526930/234408233-4b967aae-798f-46f6-94d3-bbb5a2a280f5.png)
+      ![](https://user-images.githubusercontent.com/91526930/234409439-7d409b57-2931-4eb7-98c7-4c080197f583.png)
 
 &#x20;
 
