@@ -13,7 +13,6 @@
 
 패키지가 없으면, [Github-Industrial-AI-Automation\_HGU](https://github.com/ykkimhgu/HGU_IAIA/blob/main/Tutorial/TU_ROS/tutorial/ros/ros-install-packages-for-robot.md) 자료의 Ohter packages 내용 참고해서 다운.
 
-&#x20;
 
 ## Execution Flow
 
@@ -32,7 +31,6 @@
 * No.1: 192.168.0.8
 * No.2: 192.168.0.9
 
-&#x20;
 
 ## 2. Software Connection
 
@@ -42,7 +40,6 @@
 roslaunch indy10_moveit_config moveit_planning_execution.launch robot_ip:=192.168.0.8
 ```
 
-&#x20;
 
 ## 3. gripper/vacuum 사용 설정
 
@@ -59,7 +56,6 @@ real = True
 gripper = "Gripper" or "Vaccum"
 ```
 
-&#x20;
 
 ## 4. 시뮬레이션 실행(gazebo)
 
@@ -69,7 +65,6 @@ gripper = "Gripper" or "Vaccum"
 roslaunch indy10_gazebo indy10_moveit_gazebo.launch
 ```
 
-&#x20;
 
 ## 5. 데모 프로그램 실행
 
