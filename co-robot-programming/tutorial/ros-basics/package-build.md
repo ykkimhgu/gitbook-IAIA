@@ -230,7 +230,7 @@ ROS 통신 시스템의 기본 구성요소인 노드(Node)와 토픽(Topic)에 
 ## 6. 외부 패키지 설치 방법
 
 * ROS에서 공식적으로 만들어서 제공하는 package는 아니지만, 특정 회사나 개인이 만들어 package를 github를 통해 배포하는 경우가 있음.
-*   ROS 인증(?) 받은 package의 경우, 아래와 같이 설치할 수 있음.
+*   ROS 인증받은 package의 경우, 아래와 같이 설치할 수 있음.
 
     ```bash
     sudo apt-get install ros-noetic-[pacakge name]
