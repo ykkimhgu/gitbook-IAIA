@@ -16,7 +16,7 @@ ROS에서 \*\*워크스페이스(workspace)\*\*는 프로젝트를 저장하고 
 
 ROS가 정상적으로 설치되었는지 확인합니다. 아래 명령어로 `roscore`를 실행하여 ROS 마스터가 작동하는지 확인합니다:
 
-```
+```bash
 roscore
 ```
 
@@ -26,7 +26,7 @@ roscore
 
 워크스페이스를 생성하고 초기화하는 과정을 진행합니다:
 
-```
+```bash
 mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws
 catkin_make
@@ -41,13 +41,13 @@ source devel/setup.bash
 
 생성된 워크스페이스의 디렉토리 구조를 확인합니다:
 
-```
+```bash
 ls ~/catkin_ws
 ```
 
 출력 예시:
 
-```
+```bash
 build  devel  src
 ```
 
@@ -61,7 +61,7 @@ build  devel  src
 
 `source devel/setup.bash`는 워크스페이스의 설정 정보를 현재 터미널에 적용합니다. 이를 통해 ROS가 패키지와 실행 파일을 인식할 수 있게 됩니다. 터미널을 새로 열 때마다 이 명령을 실행하거나, `.bashrc` 파일에 추가하여 자동으로 설정할 수 있습니다:
 
-```
+```bash
 echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 ```
