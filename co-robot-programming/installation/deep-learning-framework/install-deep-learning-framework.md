@@ -17,7 +17,6 @@ conda install -c anaconda seaborn jupyter
 pip install opencv-python
 ```
 
-&#x20;
 
 ## 2. Install CUDA, CUDNN, PyTorch
 
@@ -40,7 +39,6 @@ pip install torchsummary
 conda list all
 ```
 
-&#x20;
 
 ### 2.2. Only CPU
 
@@ -50,7 +48,6 @@ conda install pytorch==2.1.1 torchvision==0.16.1 torchaudio==2.1.1 cpuonly -c py
 pip install torchsummary
 ```
 
-&#x20;
 
 ## 3. ROS 패키지 설치 및 환경구축
 
@@ -73,7 +70,6 @@ pip install torchsummary
     export PYTHONPATH=/opt/ros/noetic/lib/python3/dist-packages:$PYTHONPATH
     ```
 
-&#x20;
 
 ## 4. Troubleshooting
 
@@ -91,4 +87,3 @@ pip install torchsummary
     conda install -c conda-forge libtiff=4.0
     ```
 
-##
