@@ -18,7 +18,7 @@
 
 아래는 문자열 데이터를 퍼블리싱하는 간단한 Python 퍼블리셔 노드 예제입니다:
 
-```
+```python
 # src/my_package/simple_publisher.py
 import rospy
 from std_msgs.msg import String
@@ -35,7 +35,7 @@ while not rospy.is_shutdown():
 
 퍼블리셔 노드를 실행하려면 파일에 실행 권한을 부여하고 실행합니다:
 
-```
+```bash
 chmod +x src/my_package/simple_publisher.py
 rosrun my_package simple_publisher.py
 ```
@@ -44,13 +44,13 @@ rosrun my_package simple_publisher.py
 
 토픽 `/chatter`에 퍼블리싱된 데이터를 확인합니다:
 
-```
+```bash
 rostopic echo /chatter
 ```
 
 출력 예시:
 
-```
+```text
 data: "Hello, ROS!"
 ```
 
@@ -58,7 +58,7 @@ data: "Hello, ROS!"
 
 아래는 퍼블리싱된 문자열 데이터를 구독하는 Python 서브스크라이버 노드 예제입니다:
 
-```
+```python
 # src/my_package/simple_subscriber.py
 import rospy
 from std_msgs.msg import String
@@ -75,7 +75,7 @@ rospy.spin()
 
 파일에 실행 권한을 부여한 후 실행합니다:
 
-```
+```bash
 chmod +x src/my_package/simple_subscriber.py
 rosrun my_package simple_subscriber.py
 ```
@@ -84,7 +84,7 @@ rosrun my_package simple_subscriber.py
 
 퍼블리셔와 서브스크라이버 간의 관계를 시각적으로 확인합니다:
 
-```
+```bash
 rqt_graph
 ```
 
@@ -96,7 +96,7 @@ rqt_graph
 
 아래는 문자열 데이터를 퍼블리싱하는 간단한 C++ 퍼블리셔 노드 예제입니다:
 
-```
+```cpp
 // src/my_package/src/simple_publisher.cpp
 #include "ros/ros.h"
 #include "std_msgs/String.h"
@@ -131,7 +131,7 @@ int main(int argc, char **argv)
 
 아래는 퍼블리싱된 문자열 데이터를 구독하는 간단한 C++ 서브스크라이버 노드 예제입니다:
 
-```
+```cpp
 // src/my_package/src/simple_subscriber.cpp
 #include "ros/ros.h"
 #include "std_msgs/String.h"
@@ -157,7 +157,7 @@ int main(int argc, char **argv)
 
 `CMakeLists.txt` 파일에 새 노드를 추가합니다:
 
-```
+```cmake
 add_executable(simple_publisher src/simple_publisher.cpp)
 target_link_libraries(simple_publisher ${catkin_LIBRARIES})
 
@@ -167,14 +167,14 @@ target_link_libraries(simple_subscriber ${catkin_LIBRARIES})
 
 ### 4. 워크스페이스 빌드
 
-```
+```bash
 cd ~/catkin_ws
 catkin_make
 ```
 
 ### 5. 노드 실행
 
-```
+```bash
 rosrun my_package simple_publisher
 rosrun my_package simple_subscriber
 ```
@@ -183,7 +183,7 @@ rosrun my_package simple_subscriber
 
 퍼블리셔와 서브스크라이버 간의 관계를 시각적으로 확인합니다:
 
-```
+```bash
 rqt_graph
 ```
 
@@ -211,12 +211,12 @@ rqt_graph
 
 *   **Python**:
 
-    ```
+    ```bash
     rosrun my_package simple_publisher.py
     ```
 *   **C++**:
 
-    ```
+    ```bash
     rosrun my_package simple_publisher
     ```
 
