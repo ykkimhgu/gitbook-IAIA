@@ -47,7 +47,7 @@ echo $ROS_PACKAGE_PATH
 ## 2. ROS Build System
 
 * **Catkin**은 ROS의 빌드 시스템이다.
-* **CMake\(Cross Platform Make\)**를 기본적으로 이용.
+* CMake(Cross Platform Make)를 기본적으로 이용.
 * `CMakeList.txt`라는 파일에 빌드 환경을 기술해야 함.
 
 정리: CMake를 이용하여, ROS 환경에 알맞게 Catkin 빌드 시스템을 만들었으며, ROS 관련 빌드, 패키지 관리, 패키지 간 의존성 등을 편리하게 사용할 수 있게 되었다.
@@ -56,13 +56,13 @@ echo $ROS_PACKAGE_PATH
 
 ### 2.1. 패키지 빌드 과정
 
-1. 패키지 생성
-2. 패키지 설정 파일(`package.xml`) 수정
-3. 빌드 설정 파일(`CMakeList.txt`) 수정
-4. 메시지 파일 작성
-5. 소스 코드 작성
-6. 빌드 전 처리
-7. 노드 실행
+1\) 패키지 생성
+2\) 패키지 설정 파일(`package.xml`) 수정
+3\) 빌드 설정 파일(`CMakeList.txt`) 수정
+4\) 메시지 파일 작성
+5\) 소스 코드 작성
+6\) 빌드 전 처리
+7\) 노드 실행
 
 ### 2.2. 빌드 해야하는 상황
 
@@ -165,7 +165,7 @@ ROS 통신 시스템의 기본 구성요소인 노드(Node)와 토픽(Topic)에 
 
     * talker가 생성한 내용을 listener가 메시지로 받아서 화면에 출력한다.
 
-    ![image](https://user-images.githubusercontent.com/91526930/234394784-a24bfbb2-8f10-443e-b23d-f5dafda2532e.png)
+    ![](https://user-images.githubusercontent.com/91526930/234394784-a24bfbb2-8f10-443e-b23d-f5dafda2532e.png)
 *   node & Topic 관찰하기
 
     ```bash
@@ -174,7 +174,7 @@ ROS 통신 시스템의 기본 구성요소인 노드(Node)와 토픽(Topic)에 
 
     * talker와 listener라는 노드가 있으며, chatter라는 정보를 전달하고 있다.
 
-    ![image](https://user-images.githubusercontent.com/91526930/234394161-ca099b10-639c-466d-9162-7fe709a4a39a.png)
+    ![](https://user-images.githubusercontent.com/91526930/234394161-ca099b10-639c-466d-9162-7fe709a4a39a.png)
 *   Tutorial 폴더 접근하기
 
     ```bash
@@ -184,20 +184,20 @@ ROS 통신 시스템의 기본 구성요소인 노드(Node)와 토픽(Topic)에 
 
     *   폴더에는 `.launch` `.py`의 구성
 
-        ![image](https://user-images.githubusercontent.com/91526930/234396103-730b952f-d540-4871-b962-3101a73b3778.png)
+        ![](https://user-images.githubusercontent.com/91526930/234396103-730b952f-d540-4871-b962-3101a73b3778.png)
     *   `talker_listener.launch`파일 내에는 두 개의 node를 실행하는 것으로 구성되며, 각각 python 파일로부터 불러와지는 것을 확인할 수 있다.
 
-        ![image](https://user-images.githubusercontent.com/91526930/234396233-154876be-05dc-4bba-b92e-f6e1e1acc233.png)
+        ![](https://user-images.githubusercontent.com/91526930/234396233-154876be-05dc-4bba-b92e-f6e1e1acc233.png)
     *   `listener.py`
 
-        ![image](https://user-images.githubusercontent.com/91526930/234396748-210f85b3-f6da-42a1-8e1e-434460f27045.png)
+        ![](https://user-images.githubusercontent.com/91526930/234396748-210f85b3-f6da-42a1-8e1e-434460f27045.png)
 
         * 'listener'라는 노드를 `init_node`를 통해 초기화한다.
         * 'chatter'라는 String 형태의 msg 정보를 subscribing하고, callback함수를 실행한다.
         * callback 함수는 data를 받아서, terminal 창에 출력한다.
     *   `talker.py`
 
-        ![image](https://user-images.githubusercontent.com/91526930/234398302-2ef57b3a-b3d7-4d62-966b-13475a1e5971.png)
+        ![](https://user-images.githubusercontent.com/91526930/234398302-2ef57b3a-b3d7-4d62-966b-13475a1e5971.png)
 
         * 'chatter'라는 String 형태의 msg 정보를 publishing하는 변수 pub을 선언한다.
         * 'talker'라는 노드를 초기화한다.
@@ -209,7 +209,7 @@ ROS 통신 시스템의 기본 구성요소인 노드(Node)와 토픽(Topic)에 
         * std\_msgs는 기본적으로 정의된 msgs들의 기본 형식을 제공한다.
         * `Bool`, `Byte`, `Int16`, `Float32`, `Int8MultiArray`, `String`, `Time` 등의 변수 type들이 존재한다.
 
-        ![image](https://user-images.githubusercontent.com/91526930/234399565-051b3c6f-2160-4341-a715-0a4e2f4b68e4.png)
+        ![](https://user-images.githubusercontent.com/91526930/234399565-051b3c6f-2160-4341-a715-0a4e2f4b68e4.png)
 
 ## 5. ROS Package
 
@@ -225,7 +225,7 @@ ROS 통신 시스템의 기본 구성요소인 노드(Node)와 토픽(Topic)에 
     ```
 * 경로에서 확인할 수 있듯이 package를 설치하면 `/opt/ros/noetic/share` 내부에는 알게 모르게 설치된 수많은 package들이 존재함. `vs code`를 통해 프로그램 코드를 모두 확인할 수는 있지만, 수정할 수 있는 권한이 없음.
 
-![image](https://user-images.githubusercontent.com/91526930/235362934-a74b67f4-0026-4bf7-96af-aaeec117a5f3.png)
+![](https://user-images.githubusercontent.com/91526930/235362934-a74b67f4-0026-4bf7-96af-aaeec117a5f3.png)
 
 ## 6. 외부 패키지 설치 방법
 
