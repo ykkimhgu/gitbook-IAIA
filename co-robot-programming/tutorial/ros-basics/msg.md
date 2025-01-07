@@ -37,7 +37,7 @@ ROS의 **Msg 파일**은 노드 간 통신에서 사용하는 데이터 구조�
     이 메시지는 이름, 나이, 키 정보를 담는 구조를 정의합니다.
 3.  `CMakeLists.txt` **수정** 커스텀 메시지를 빌드 과정에 포함시킵니다:
 
-    ```bash
+    ```cmake
     ## 메세지 생성 패키지 추가
     find_package(catkin REQUIRED COMPONENTS
       roscpp
