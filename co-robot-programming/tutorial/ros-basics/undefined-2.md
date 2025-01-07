@@ -165,7 +165,7 @@ rosrun tutorial image_display.py		# terminal 3
 rqt_graph								# terminal 4
 ```
 
-![image](https://user-images.githubusercontent.com/91526930/235357562-126a214d-7139-4701-8e90-07a87a32ca53.png)
+![](https://user-images.githubusercontent.com/91526930/235357562-126a214d-7139-4701-8e90-07a87a32ca53.png)
 
 ### 실습: Launch파일로 parameter 입력받도록 코드 수정하기
 
@@ -292,7 +292,7 @@ roscore                            # Terminal 1
 rosrun pointgrey_camera_driver list_cameras    # Terminal 2
 ```
 
-![image](https://user-images.githubusercontent.com/91526930/235361466-d02e984e-1d5d-402c-8a77-4bc341d13c3e.png)
+![](https://user-images.githubusercontent.com/91526930/235361466-d02e984e-1d5d-402c-8a77-4bc341d13c3e.png)
 
 **인식이 잘 안될 경우, USB 다시 연결 또는 재부팅 시도**
 
@@ -303,7 +303,7 @@ roslaunch pointgrey_camera_driver camera.launch camera:=/15384429
 rqt_graph
 ```
 
-![image](https://user-images.githubusercontent.com/91526930/235361525-e59f1935-3f0c-4622-bd1c-3efb861abb4d.png)
+![](https://user-images.githubusercontent.com/91526930/235361525-e59f1935-3f0c-4622-bd1c-3efb861abb4d.png)
 
 *   현재, 여러 노드와 토픽이 생성된 것을 확인할 수 있음. 특히,`/camera/image_raw`토픽은 우리가 알고 있는 msg\_type이므로, subscribing 가능
 
@@ -311,5 +311,5 @@ rqt_graph
     rosrun tutorial image_display.py
     ```
 
-    ![image](https://user-images.githubusercontent.com/91526930/235361805-789a28b5-9876-4041-9d36-c523611271b3.png)
+    ![](https://user-images.githubusercontent.com/91526930/235361805-789a28b5-9876-4041-9d36-c523611271b3.png)
 * 필요하다면, `image_mono` 와 `image_color` 토픽을 subscribing 할 수 있음.
