@@ -154,7 +154,7 @@ chmod +x ~/catkin_ws/src/my_package/src/image_classifier.py
 
 #### 5. 프로그램 실행
 
-```
+```bash
 # terminal 1
 act_ros		# 환경세팅
 roscore
