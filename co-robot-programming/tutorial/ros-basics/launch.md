@@ -21,7 +21,7 @@ ROS의 **Launch 파일**은 여러 노드를 동시에 실행하고 설정을 �
 
 Launch 파일은 XML 형식으로 작성되며, `<launch>` 태그 안에 실행할 노드 및 설정을 정의합니다. 기본 구조는 아래와 같습니다:
 
-```
+```xml
 <launch>
     <!-- 공용 파라미터 설정 -->
     <param name="global_param_name" value="global_value" />
@@ -50,7 +50,7 @@ Launch 파일은 XML 형식으로 작성되며, `<launch>` 태그 안에 실행�
 
 ROS 워크스페이스의 `launch` 디렉토리를 생성하고 `custom_nodes.launch` 파일을 작성합니다:
 
-```
+```bash
 mkdir -p ~/catkin_ws/src/my_package/launch
 cd ~/catkin_ws/src/my_package/launch
 touch custom_nodes.launch
@@ -60,7 +60,7 @@ touch custom_nodes.launch
 
 `custom_nodes.launch` 파일을 열고 아래 내용을 작성합니다:
 
-```
+```xml
 <launch>
     <!-- 공용 파라미터 설정 -->
     <param name="global_param" value="common_value" />
@@ -77,7 +77,7 @@ touch custom_nodes.launch
 
 #### 3. 퍼블리셔 수정
 
-```
+```python
 rate_value = rospy.get_param('~publish_rate', 1)  # 기본값 1 Hz
 rate = rospy.Rate(1.0/rate_value)   # Hz
 ```
@@ -86,7 +86,7 @@ rate = rospy.Rate(1.0/rate_value)   # Hz
 
 Launch 파일을 실행하여 퍼블리셔와 서브스크라이버를 동시에 실행합니다:
 
-```
+```bash
 roslaunch my_package custom_nodes.launch
 ```
 
