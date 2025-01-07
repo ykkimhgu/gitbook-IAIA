@@ -17,12 +17,12 @@
 
 #### 1. ROS 노드 실행
 
-1\)  **ROS 마스터 실행**: 모든 ROS 통신의 중심이 되는 `roscore` 실행.
+ 1\)  **ROS 마스터 실행**: 모든 ROS 통신의 중심이 되는 `roscore` 실행.
 
     ```bash
     roscore
     ```
-2)  **Turtlesim 노드 실행**:
+ 2\)  **Turtlesim 노드 실행**:
 
     ```bash
     rosrun turtlesim turtlesim_node
