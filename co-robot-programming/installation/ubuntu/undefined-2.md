@@ -80,13 +80,13 @@ sudo apt-get install typora
 * 재부팅
 
 ```bash
-$ reboot
+reboot
 ```
 
 * ibus-setup
 
 ```bash
-$ ibus-setup
+ibus-setup
 ```
 
 * \[Input Method] -\[Add] - \[Korean 검색] - \[Hangul] - \[Add] - \[Close]
