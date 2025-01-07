@@ -3,6 +3,7 @@
 ## 1. Anaconda Installer
 
 * Download anaconda Installer: [link](https://www.anaconda.com/download/success)
+  
  ![](https://github.com/user-attachments/assets/1a60754e-35f1-4c9d-b42f-154df6e332ef)
 
 
