@@ -18,25 +18,26 @@ ROS의 **Msg 파일**은 노드 간 통신에서 사용하는 데이터 구조�
   * [ROS Wiki - std\_msgs](http://wiki.ros.org/std_msgs)
 * **커스텀 메시지(Custom Msg)**: 사용자가 정의한 메시지 구조로, 프로젝트의 특정 요구에 맞게 설계.
 
+
 ### 커스텀 Msg 파일 생성과 활용
 
 #### 실습 1: 간단한 커스텀 Msg 파일 생성
 
 1.  `msg` **디렉토리 생성** 커스텀 메시지를 저장할 디렉토리를 생성합니다:
 
-    ```
+    ```bash
     mkdir -p ~/catkin_ws/src/my_package/msg
     ```
 2.  **Msg 파일 생성** `Person.msg` 파일을 생성하여 아래 내용을 작성합니다:
 
-    ```
+    ```bash
     echo -e "string name\nint32 age\nfloat32 height" > ~/catkin_ws/src/my_package/msg/Person.msg
     ```
 
     이 메시지는 이름, 나이, 키 정보를 담는 구조를 정의합니다.
 3.  `CMakeLists.txt` **수정** 커스텀 메시지를 빌드 과정에 포함시킵니다:
 
-    ```
+    ```bash
     ## 메세지 생성 패키지 추가
     find_package(catkin REQUIRED COMPONENTS
       roscpp
@@ -64,13 +65,13 @@ ROS의 **Msg 파일**은 노드 간 통신에서 사용하는 데이터 구조�
     ```
 4.  `package.xml` **수정** 메시지 의존성을 추가합니다:
 
-    ```
+    ```bash
     <build_depend>message_generation</build_depend>
     <exec_depend>message_runtime</exec_depend>
     ```
 5.  **워크스페이스 빌드** 새로운 Msg 파일을 빌드하여 자동으로 생성된 헤더 파일을 준비합니다:
 
-    ```
+    ```bash
     cd ~/catkin_ws
     catkin_make
     ```
@@ -82,7 +83,7 @@ ROS의 **Msg 파일**은 노드 간 통신에서 사용하는 데이터 구조�
 
     * `~catkin_ws/src/my_package/src`위치에서 `custom_publisher.py` 파일 작성:
 
-    ```
+    ```python
     #!/usr/bin/env python3
     #-*- coding:utf-8 -*-
 
@@ -107,7 +108,7 @@ ROS의 **Msg 파일**은 노드 간 통신에서 사용하는 데이터 구조�
 
     * `~catkin_ws/src/my_package/src`위치에서 `custom_subscriber.py` 파일 작성:
 
-    ```
+    ```python
     #!/usr/bin/env python3
     #-*- coding:utf-8 -*-
 
@@ -123,7 +124,7 @@ ROS의 **Msg 파일**은 노드 간 통신에서 사용하는 데이터 구조�
     ```
 3.  **노드 실행** 퍼블리셔와 서브스크라이버를 실행하여 커스텀 메시지를 활용한 데이터를 주고받습니다:
 
-    ```
+    ```bash
     chmod +x ~/catkin_ws/src/my_package/src/custom_publisher.py
     chmod +x ~/catkin_ws/src/my_package/src/custom_subscriber.py
     roscore
@@ -137,7 +138,7 @@ ROS의 **Msg 파일**은 노드 간 통신에서 사용하는 데이터 구조�
 
     * `~catkin_ws/src/my_package/src`위치에서 `custom_publisher.cpp` 파일 작성:
 
-    ```
+    ```cpp
     #include "ros/ros.h"
     #include "my_package/Person.h"
 
@@ -167,7 +168,7 @@ ROS의 **Msg 파일**은 노드 간 통신에서 사용하는 데이터 구조�
     ```
 2.  **C++ 서브스크라이버에서 사용** `custom_subscriber.cpp` 파일 작성:
 
-    ```
+    ```cpp
     // src/my_package/src/custom_subscriber.cpp
     #include "ros/ros.h"
     #include "my_package/Person.h"
@@ -190,7 +191,7 @@ ROS의 **Msg 파일**은 노드 간 통신에서 사용하는 데이터 구조�
     ```
 3.  **CMakeLists.txt 수정** `custom_publisher`와 `custom_subscriber` 노드를 빌드에 추가:
 
-    ```
+    ```cmake
     add_executable(custom_publisher src/custom_publisher.cpp)
     target_link_libraries(custom_publisher ${catkin_LIBRARIES})
 
@@ -199,7 +200,7 @@ ROS의 **Msg 파일**은 노드 간 통신에서 사용하는 데이터 구조�
     ```
 4.  **워크스페이스 빌드 및 실행**
 
-    ```
+    ```bash
     cd ~/catkin_ws
     catkin_make
 
