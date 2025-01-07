@@ -28,7 +28,8 @@ sudo apt install terminator
 
 *   설치파일 다운로드 `.deb file` - [vs code](https://code.visualstudio.com/download)
 
-    ![image](https://github.com/user-attachments/assets/f2718160-304f-44f9-81a7-6c2d5b818829)
+    ![](https://github.com/user-attachments/assets/f2718160-304f-44f9-81a7-6c2d5b818829)
+
 *   unpack
 
     다운로드한 파일은 `home/Downloads` 경로에 존재한다.
@@ -72,9 +73,9 @@ sudo apt-get install typora
 
 *   \[settings] - \[Region & Language] - \[Manage Installed Languages] - \[install]
 
-    ![image](https://user-images.githubusercontent.com/91526930/234136304-3fa90717-9034-4cff-8337-733da8ebf548.png)
+    ![](https://user-images.githubusercontent.com/91526930/234136304-3fa90717-9034-4cff-8337-733da8ebf548.png)
 
-    ![image](https://user-images.githubusercontent.com/91526930/234136309-d0f575df-d9b0-4e17-8ed6-a4804dac79a2.png)
+    ![](https://user-images.githubusercontent.com/91526930/234136309-d0f575df-d9b0-4e17-8ed6-a4804dac79a2.png)
 * 재부팅
 
 ```bash
