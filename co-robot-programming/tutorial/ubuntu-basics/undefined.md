@@ -35,7 +35,7 @@ ls -lh                   # 파일 크기를 사람이 읽기 쉬운 형식으로
 새 디렉토리를 생성합니다.
 
 ```bash
-mkdir new_folder        # new_folder라는 이름의 디렉토리 생성
+mkdir new_folder         # new_folder라는 이름의 디렉토리 생성
 ```
 
 #### **rm (Remove)**
@@ -43,9 +43,9 @@ mkdir new_folder        # new_folder라는 이름의 디렉토리 생성
 파일 또는 디렉토리를 삭제합니다.
 
 ```bash
-rm file.txt             # 파일 삭제
-rm -r folder            # 폴더와 그 안의 내용 삭제
-rm -rf folder           # 강제로 삭제 (주의 필요)
+rm file.txt              # 파일 삭제
+rm -r folder             # 폴더와 그 안의 내용 삭제
+rm -rf folder            # 강제로 삭제 (주의 필요)
 ```
 
 #### **cp (Copy)**
@@ -53,8 +53,8 @@ rm -rf folder           # 강제로 삭제 (주의 필요)
 파일 또는 디렉토리를 복사합니다.
 
 ```bash
-cp file1.txt file2.txt  # file1.txt를 file2.txt로 복사
-cp -r folder1 folder2   # folder1의 내용을 folder2로 복사
+cp file1.txt file2.txt   # file1.txt를 file2.txt로 복사
+cp -r folder1 folder2    # folder1의 내용을 folder2로 복사
 ```
 
 #### **mv (Move)**
@@ -75,8 +75,8 @@ mv file.txt /new/path       # 파일을 다른 경로로 이동
 관리자 권한으로 명령어를 실행합니다. 주로 시스템 변경이나 설치 작업에 사용됩니다.
 
 ```bash
-sudo apt update         # 패키지 목록 업데이트
-sudo rm -rf /folder     # 관리자 권한으로 폴더 삭제
+sudo apt update          # 패키지 목록 업데이트
+sudo rm -rf /folder      # 관리자 권한으로 폴더 삭제
 ```
 
 #### **apt (Advanced Package Tool)**
@@ -84,10 +84,10 @@ sudo rm -rf /folder     # 관리자 권한으로 폴더 삭제
 패키지 관리 도구로 소프트웨어 설치 및 업데이트에 사용됩니다.
 
 ```bash
-sudo apt update         # 패키지 목록 업데이트
-sudo apt upgrade        # 시스템 업그레이드
-sudo apt install vim    # vim 편집기 설치
-sudo apt remove vim     # vim 편집기 제거
+sudo apt update          # 패키지 목록 업데이트
+sudo apt upgrade         # 시스템 업그레이드
+sudo apt install vim     # vim 편집기 설치
+sudo apt remove vim      # vim 편집기 제거
 ```
 
 #### **chmod (Change Mode)**
@@ -95,8 +95,8 @@ sudo apt remove vim     # vim 편집기 제거
 파일 또는 디렉토리의 권한을 변경합니다.
 
 ```bash
-chmod 755 script.sh     # 읽기, 쓰기, 실행 권한 부여
-chmod +x script.sh      # 실행 권한 추가
+chmod 755 script.sh      # 읽기, 쓰기, 실행 권한 부여
+chmod +x script.sh       # 실행 권한 추가
 ```
 
 &#x20;
