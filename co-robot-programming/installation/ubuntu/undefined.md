@@ -26,12 +26,12 @@ OS 설치 과정 중 Windows OS에 피해가 갈 수 있으므로, BitLocker 키
 * MS 계정으로 로그인하여 \[내 계정]-\[디바이스] 탭으로 접속
 * 등록되어 있는 디바이스의 \[Bitlocker 키 보기]를 통해 드라이브에 해당하는 키 ID를 확인 가능.
 
-![Untitled](https://user-images.githubusercontent.com/91526930/233802004-2fe80c3f-2539-46d0-9705-1bf4201c3427.png)
+![](https://user-images.githubusercontent.com/91526930/233802004-2fe80c3f-2539-46d0-9705-1bf4201c3427.png)
 
 * \[운영 체제 드라이브]의 recovery key를 확인하고, 따로 적어둘 것. 같은 PC에 적어두면, 문제 생겼을 시 확인을 할 수 없으므로, **꼭 다른 곳에 적어두어야!**
 * BitLocker 끄기
 
-![Untitled2](https://user-images.githubusercontent.com/91526930/233802011-bb7591b6-ab2d-4557-a45b-48e1d0b4762c.png)
+![](https://user-images.githubusercontent.com/91526930/233802011-bb7591b6-ab2d-4557-a45b-48e1d0b4762c.png)
 
 \[Reference]
 
@@ -49,7 +49,7 @@ Ubuntu OS를 설치하기 위한 부팅디스크 USB를 준비하는 과정이�
 
 * [ubuntu 20.04.6 LTS](https://releases.ubuntu.com/focal/)
 
-![ubuntu-20.04.6 disk image](https://user-images.githubusercontent.com/91526930/233799641-5a7e2ec0-93f8-427f-a42c-3a3e7925e8f4.png)
+![](https://user-images.githubusercontent.com/91526930/233799641-5a7e2ec0-93f8-427f-a42c-3a3e7925e8f4.png)
 
 &#x20;
 
@@ -58,7 +58,7 @@ Ubuntu OS를 설치하기 위한 부팅디스크 USB를 준비하는 과정이�
 * [Rufus 다운로드](https://rufus.ie/ko/)
   * 포터블 다운로드 시 설치 과정 없이 바로 실행 가능
 
-![image](https://user-images.githubusercontent.com/91526930/233799896-4a051f93-a35a-496c-aa30-3db0d592216a.png)
+![](https://user-images.githubusercontent.com/91526930/233799896-4a051f93-a35a-496c-aa30-3db0d592216a.png)
 
 * USB 연결
   * 디스크 이미지 파일 설치 시 USB 내의 파일들은 모두 사라지므로, 다른 저장소에 옮겨둘 것.
@@ -123,7 +123,6 @@ PC에서 사용중인 디스크 파티션 중 Ubuntu OS를 설치할 디스크 �
 * \[Ubuntu OS 설치 USB 연결] - \[재부팅] - \[BIOS 진입 key 입력]
   * BIOS 진입 key: `Del`, `F2`, `F10`, `F11` 등 제조사별, 제품별 상이함.
 
-&#x20;
 
 #### 부팅 옵션 설정
 
@@ -146,18 +145,18 @@ PC에서 사용중인 디스크 파티션 중 Ubuntu OS를 설치할 디스크 �
 * 부팅 순서의 우선순위를 연결된 USB로 설정함.
 * 그러면, Ubuntu OS 설치하는 프로그램이 부팅됨.
 
-![image](https://user-images.githubusercontent.com/91526930/233800893-64b75d34-b087-4763-9bf1-b4b16455b678.png)
+![](https://user-images.githubusercontent.com/91526930/233800893-64b75d34-b087-4763-9bf1-b4b16455b678.png)
 
 * Keyboard Layout - \[Continue]
 * Updates and other software
   * Normal과 Minimal (상관없음)
   *   Install third-party \~\~ (선택)
 
-      ![image](https://user-images.githubusercontent.com/91526930/233801007-d312d181-4284-457a-8b35-d2728353bc1f.png)
+      ![](https://user-images.githubusercontent.com/91526930/233801007-d312d181-4284-457a-8b35-d2728353bc1f.png)
 * Installation type
   *   Something else 선택
 
-      ![image](https://user-images.githubusercontent.com/91526930/233801028-3089aac4-310d-4416-ac42-340573d5d267.png)
+      ![](https://user-images.githubusercontent.com/91526930/233801028-3089aac4-310d-4416-ac42-340573d5d267.png)
 
 &#x20;
 
@@ -171,7 +170,7 @@ Ubuntu OS를 설치할 디스크 파티션을 설정하는 과정이며, Windows
 
 *   현재까지의 순서 상으로 문제가 없다면, 다음과 같이 **할당되지 않은 공간** `free space`가 출력되어야 함.
 
-    ![image](https://user-images.githubusercontent.com/91526930/233801431-6a0b2f75-c197-4006-9e1e-9eb346dbe51a.png)
+    ![](https://user-images.githubusercontent.com/91526930/233801431-6a0b2f75-c197-4006-9e1e-9eb346dbe51a.png)
 * 위 그림에 대한 부연 설명
   * `/dev/sda` 내에 sda1, sda2, sda3개의 드라이브가 역할에 따라 구분되어 있음.
   * `/dev/sdb` 내에 sdb1개만 있음. 용량을 비교했을 때, ubuntu 설치용으로 만들어 놓은 드라이브임.
@@ -195,7 +194,7 @@ Ubuntu OS를 설치할 디스크 파티션을 설정하는 과정이며, Windows
     * 해당 디스크 파티션이 애초 `free space`여야 정상인 것을 확신한다면, 해당 공간을 지워 `free space`로 만들어줌.
     * 아래의 `+` `-` `Change...` 3개의 버튼 중 `-`를 클릭하여 `free space`로 만들면, 위의 정상적인 화면과 동일하게 됨.
 
-    ![image](https://user-images.githubusercontent.com/91526930/233801135-b4f1a4de-ea0d-4492-a38c-77195029c728.png)
+    ![](https://user-images.githubusercontent.com/91526930/233801135-b4f1a4de-ea0d-4492-a38c-77195029c728.png)
 
 &#x20;
 
@@ -226,7 +225,7 @@ Ubuntu OS를 설치할 디스크 파티션을 설정하는 과정이며, Windows
       * Use as: Ext4 jounaling file system
       * Mount point: `/`
 
-    ![image](https://github.com/user-attachments/assets/efb65e8e-4cb3-4380-a1ce-8550a016826c)
+    ![](https://github.com/user-attachments/assets/efb65e8e-4cb3-4380-a1ce-8550a016826c)
 
     *   파티션 생성 결과 (예상)
 
@@ -270,8 +269,9 @@ Ubuntu OS를 설치할 디스크 파티션을 설정하는 과정이며, Windows
       * Use as: Ext4 jounaling file system
       * Mount point: `/`
 
-      ![image](https://github.com/user-attachments/assets/efb65e8e-4cb3-4380-a1ce-8550a016826c)
-  * 결과 ![image](https://user-images.githubusercontent.com/91526930/233802422-f5c6e0a7-8beb-42ce-b0bd-9ee95a5e3b12.png)
+      ![](https://github.com/user-attachments/assets/efb65e8e-4cb3-4380-a1ce-8550a016826c)
+  * 결과
+  ![](https://user-images.githubusercontent.com/91526930/233802422-f5c6e0a7-8beb-42ce-b0bd-9ee95a5e3b12.png)
 * 부트로더 설정하기
   * 하단의 `Device for boot loader installation:` 에서 efi 파티션을 선택할 것.
   *   `Install Now` 버튼을 클릭하면, 선택된 디스크가 포맷된다는 경고 및 안내창이 출력됨.
@@ -280,10 +280,10 @@ Ubuntu OS를 설치할 디스크 파티션을 설정하는 과정이며, Windows
       * 특이사항이 있다면, 기존의 세팅에서 문제가 없는지 검토 및 검색을 통해 해결해야함.
       * 아래 그림과 같은 상황에서 진행하게 된다면, efi 파티션 관련한 에러가 출력될 것임.
 
-      ![image](https://user-images.githubusercontent.com/91526930/233801651-2ff7a1cd-072b-4d99-9806-e84906008c5e.png)
+      ![](https://user-images.githubusercontent.com/91526930/233801651-2ff7a1cd-072b-4d99-9806-e84906008c5e.png)
   *   정상적인 안내창
 
-      ![image](https://user-images.githubusercontent.com/91526930/233801734-1cc16c7a-5714-4a97-9df6-1921901a262a.png)
+      ![](https://user-images.githubusercontent.com/91526930/233801734-1cc16c7a-5714-4a97-9df6-1921901a262a.png)
 
 &#x20;
 
@@ -292,7 +292,7 @@ Ubuntu OS를 설치할 디스크 파티션을 설정하는 과정이며, Windows
 * \[재부팅] - \[USB 제거] - \[Set PC name & password]
   * 비밀번호는 짧게 하는게 편함.
 
-![image](https://user-images.githubusercontent.com/91526930/233801833-1f2f3665-e533-4796-91ed-23a307837df5.png)
+![](https://user-images.githubusercontent.com/91526930/233801833-1f2f3665-e533-4796-91ed-23a307837df5.png)
 
 &#x20;
 
