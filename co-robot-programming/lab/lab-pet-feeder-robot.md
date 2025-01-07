@@ -12,7 +12,7 @@ Industrial AI & Automation 2024
 
 This lab aims to implement an automated Pet Feeder Robot using ROS, with a pet classifier via camera.
 
-![image](https://github.com/user-attachments/assets/68f36df1-60f4-46e9-8693-afc41855acf7)
+![](https://github.com/user-attachments/assets/68f36df1-60f4-46e9-8693-afc41855acf7)
 
 ## System Requirements
 
@@ -26,7 +26,7 @@ This lab aims to implement an automated Pet Feeder Robot using ROS, with a pet c
 
 ## Pet Feeder Robot System
 
-![image](https://github.com/user-attachments/assets/94a97c2d-583c-49eb-878c-e027d015ae6f)
+![](https://github.com/user-attachments/assets/94a97c2d-583c-49eb-878c-e027d015ae6f)
 
 ## Procedure
 
@@ -56,7 +56,7 @@ The main nodes for this robotic system are listed below. Briefly explain the rol
   * `image_display.py`
   * `pet_classifier.py`
   * `pet_feeder.py`
-  * The source codes were provided in [UR5e-Execution](https://github.com/ykkimhgu/HGU_IAIA/blob/main/Tutorial/TU_ROS/tutorial/ur5e/ur5e-robot-execution.md), and needs to be appropriately modified.
+  * The source codes were provided in [UR5e Simulation](co-robot-programming/tutorial/ur5e-ros/ur5e-simulation.md), and needs to be appropriately modified.
 * add message in `catkin_ws/src/indy_driver/msg`
   * `pet_info.msg`
 * modify the file `CMakeList.txt` in `catkin_ws/src/indy_driver`
