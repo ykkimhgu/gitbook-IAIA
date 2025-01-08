@@ -24,7 +24,7 @@ For the dataset, we will use
 * the selected CWRU dataset used in journal
 * Download CWRU dataset for this lab: [Download here](https://drive.google.com/file/d/1pv-0E8hA77Nr5-gHwVgPq3PR2rdyCj_-/view?usp=sharing)
 
-![image-20220328150553353](https://user-images.githubusercontent.com/38373000/160838885-b74dc1af-4bc9-4bd1-a76f-0bff7f5dd00a.png)
+![](https://user-images.githubusercontent.com/38373000/160838885-b74dc1af-4bc9-4bd1-a76f-0bff7f5dd00a.png)
 
 ### Report
 
@@ -46,7 +46,7 @@ Also, submit **LAB\_BearingDiagnosisCWRU\_YourName.pdf** file.
 
 Write a short abstract for this lab
 
-![image](https://user-images.githubusercontent.com/38373000/228200357-9c5b14ef-ec7a-4309-981b-4b0f37e1dfd8.png)
+![](https://user-images.githubusercontent.com/38373000/228200357-9c5b14ef-ec7a-4309-981b-4b0f37e1dfd8.png)
 
 ### Data Preparation
 
@@ -88,7 +88,7 @@ Classification output should be described with
 * Features: Use Statistical, Envelope, WPT, and Complete Pool
 * Classifer: SVM / K-NN / Decision Tree
 
-![image](https://user-images.githubusercontent.com/38373000/228201484-742f9cc6-a45b-44f0-a776-a0abbd13618e.png)
+![](https://user-images.githubusercontent.com/38373000/228201484-742f9cc6-a45b-44f0-a776-a0abbd13618e.png)
 
 #### Case 2. Classification with feature selection/reduction
 
@@ -96,7 +96,7 @@ Classification output should be described with
 * Selection: PCA / Forward selection
 * Classifer: SVM / K-NN / Decision Tree
 
-![image](https://user-images.githubusercontent.com/38373000/228202257-9a797efb-5f86-4bff-bdf4-f4ca45f27470.png)
+![](https://user-images.githubusercontent.com/38373000/228202257-9a797efb-5f86-4bff-bdf4-f4ca45f27470.png)
 
 Then, write a short analysis of the results.
 
