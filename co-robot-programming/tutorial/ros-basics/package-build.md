@@ -245,14 +245,15 @@ sudo apt-get install ros-noetic-[pacakge name]
     
 *   그러나, 해당 package를 직접 수정하여 build하고자 한다면 다음과 같이 `~/catkin_ws/src` 내부에 패키지를 복사하면 가능함. (ROS 인증이 되지 않은 package이더라도, 유용한 pacakge로 판단된다면, 복사하여 필요한 작업을 진행하면 됨.)
 
-    ```bash
-    [위치] ~/catkin/src
-    git clone https://github.com/[USERNAME]/[REPOSITORY_NAME].git
-    git clone -b [branch name] https://github.com/[USERNAME]/[REPOSITORY_NAME].git # 특정 branch를 복사해야 하는 경우
-    ```
+```bash
+[위치] ~/catkin/src
+git clone https://github.com/[USERNAME]/[REPOSITORY_NAME].git
+git clone -b [branch name] https://github.com/[USERNAME]/[REPOSITORY_NAME].git # 특정 branch를 복사해야 하는 경우
+```
+
 *   패키지 빌드
 
-    ```bash
-    [위치] ~/catkin
-    catkin_make
-    ```
+```bash
+[위치] ~/catkin
+catkin_make
+```
