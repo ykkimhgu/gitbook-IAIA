@@ -82,7 +82,6 @@ rqt_graph
 * 토픽
   * turtle1/cmd\_vel 정보
 
-
 ![](https://github.com/user-attachments/assets/b01573f8-88f8-439f-bf5f-70fa3f84275e)
 
 
