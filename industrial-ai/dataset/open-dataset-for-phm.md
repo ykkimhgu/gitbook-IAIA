@@ -35,7 +35,7 @@ Type: Bearing Diagnosis / Prognostic
 
 FEMTO dataset \[49], \[50] is provided by FEMTO-ST Institute,Besancon, France. The real experiments on bearing's accelerated life tests, which are generated using an experimental platform called PRONOSTIA, are provided in this dataset. PRONOSTIA is an experimentation platform dedicated to test and validate bearings fault detection, diagnostic and prognostic approaches.
 
-![image-20220328135901059](C:%5CUsers%5Cykkim%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20220328135901059.png)
+![](C:%5CUsers%5Cykkim%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20220328135901059.png)
 
 ### MFPT Dataset
 
