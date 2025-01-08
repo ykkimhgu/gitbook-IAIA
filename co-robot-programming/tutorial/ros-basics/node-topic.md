@@ -76,7 +76,7 @@ rqt_graph
 
 2\)  **노드와 토픽 구분**
 
-![](https://github.com/user-attachments/assets/b01573f8-88f8-439f-bf5f-70fa3f84275e)
+![](https://github.com/user-attachments/assets/a2642f81-4897-404a-a597-5c036ffaa2c7)
 
 * 노드
   * /teleop\_turtle : turtle1/cmd\_vel 정보를 publish
