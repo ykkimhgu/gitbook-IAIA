@@ -69,8 +69,6 @@
 
 ![](https://user-images.githubusercontent.com/91526930/234139649-6139dcf5-b84a-41f2-9ace-b71725601155.png)
 
-
-
 ## 2. Software Connection
 
 ### Terminal
@@ -79,13 +77,9 @@
 roslaunch ur_robot_driver ur5e_bringup.launch robot_ip:=192.168.0.2
 ```
 
-
-
 ## 3. 로봇 프로그램 실행 (Teaching Pendant)
 
 ![](https://user-images.githubusercontent.com/91526930/234138529-75eb185e-f308-400f-aebb-d2f79e8b3ffb.png)
-
-
 
 ## 4. 시뮬레이션 실행 (Moveit)
 
@@ -95,13 +89,11 @@ roslaunch ur_robot_driver ur5e_bringup.launch robot_ip:=192.168.0.2
 roslaunch ur5e_rg2_moveit_config move_group.launch
 ```
 
-
 ## 5. Check Initialization in demo file
 
 ```python
 ur5e = MoveGroupPythonInterface(real="real")
 ```
-
 
 ## 6. 데모 프로그램 실행
 
