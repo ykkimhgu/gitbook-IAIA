@@ -30,7 +30,7 @@ In this LAB, you are required to create a simple code for (1) Fault Monitoring a
 
 **An Example Process**
 
-![image](https://user-images.githubusercontent.com/38373000/229803372-b42b7e22-3c5c-43e7-b361-c9fcab3e924a.png)
+![](https://user-images.githubusercontent.com/38373000/229803372-b42b7e22-3c5c-43e7-b361-c9fcab3e924a.png)
 
 ### Dataset
 
