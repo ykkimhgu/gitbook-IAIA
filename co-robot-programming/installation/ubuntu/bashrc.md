@@ -11,8 +11,6 @@
     gedit ~/.bashrc
     ```
 
-&#x20;
-
 ## 2. ROS 설치 후,
 
 ```bash
@@ -23,7 +21,6 @@ source ~/catkin_ws/devel/setup.bash
 export PYTHONPATH=~/catkin_ws/devel/lib/python3/dist-packages:/opt/ros/noetic/lib/python3/dist-packages
 ```
 
-&#x20;
 
 ## 3. ROS 환경 활성화 함수
 
@@ -37,7 +34,6 @@ function act_ros {
 }
 ```
 
-&#x20;
 
 ## 4. Anaconda 환경 활성화 함수
 
@@ -50,7 +46,6 @@ function act_conda {
 }
 ```
 
-&#x20;
 
 ## 5. 별명 선언 예시
 
