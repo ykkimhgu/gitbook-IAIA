@@ -237,23 +237,23 @@ ROS 통신 시스템의 기본 구성요소인 노드(Node)와 토픽(Topic)에 
 ## 6. 외부 패키지 설치 방법
 
 * ROS에서 공식적으로 만들어서 제공하는 package는 아니지만, 특정 회사나 개인이 만들어 package를 github를 통해 배포하는 경우가 있음.
-*   ROS 인증받은 package의 경우, 아래와 같이 설치할 수 있음.
+* ROS 인증받은 package의 경우, 아래와 같이 설치할 수 있음.
 
-```bash
-sudo apt-get install ros-noetic-[pacakge name]
-```
+    ```bash
+    sudo apt-get install ros-noetic-[pacakge name]
+    ```
     
 *   그러나, 해당 package를 직접 수정하여 build하고자 한다면 다음과 같이 `~/catkin_ws/src` 내부에 패키지를 복사하면 가능함. (ROS 인증이 되지 않은 package이더라도, 유용한 pacakge로 판단된다면, 복사하여 필요한 작업을 진행하면 됨.)
 
-```bash
-[위치] ~/catkin/src
-git clone https://github.com/[USERNAME]/[REPOSITORY_NAME].git
-git clone -b [branch name] https://github.com/[USERNAME]/[REPOSITORY_NAME].git # 특정 branch를 복사해야 하는 경우
-```
+    ```bash
+    [위치] ~/catkin/src
+    git clone https://github.com/[USERNAME]/[REPOSITORY_NAME].git
+    git clone -b [branch name] https://github.com/[USERNAME]/[REPOSITORY_NAME].git # 특정 branch를     복사해야 하는 경우
+    ```
 
 *   패키지 빌드
 
-```bash
-[위치] ~/catkin
-catkin_make
-```
+    ```bash
+    [위치] ~/catkin
+    catkin_make
+    ```
