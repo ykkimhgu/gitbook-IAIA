@@ -27,7 +27,7 @@
 * time - time series data
 * RPM - rpm during testing
 
-![image](https://github.com/user-attachments/assets/35099f50-ca84-42bd-8219-128680bee37a)
+![](https://github.com/user-attachments/assets/35099f50-ca84-42bd-8219-128680bee37a)
 
 #### Dataset folders
 
@@ -61,4 +61,4 @@
     * Fault size: 7, 14, 21
     * Load: 0HP, 1hp, 3hp
 
-    ![image](https://github.com/user-attachments/assets/7addc9d8-e6ae-4de2-94cf-f594e2dd6c32)
+    ![](https://github.com/user-attachments/assets/7addc9d8-e6ae-4de2-94cf-f594e2dd6c32)
