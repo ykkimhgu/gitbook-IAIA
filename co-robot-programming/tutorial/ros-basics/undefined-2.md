@@ -174,7 +174,7 @@ rqt_graph								# terminal 4
 * `<arg ~ />`: 파라미터 변수 선언
 * `<param ~ />`: 파라미터 변수의 값을 할당하기
 
-```python
+```xml
 <launch>
   <!-- Argument for the camera number, default to 0 -->
   <arg name="camera_number" default="0"/>
