@@ -11,7 +11,7 @@
 
 ```bash
 cd ~/Downloads			  # 다운로드 위치로 이동
-sudo bash Anaconda3_*.sh	# shell script 실행
+sudo bash Anaconda3-*.sh	# shell script 실행
 ```
 
 * 프로그램 설치 약관에 대한 내용 출력시, Enter를 계속해서 누르고 있으면 됨
