@@ -107,7 +107,8 @@ pip install torchsummary
   ubuntu-drivers devices
   ```
 
-  ![](https://github.com/user-attachments/assets/26f0cec3-1f43-4546-af9f-0b7aa9a743cc)
+  ![](https://github.com/user-attachments/assets/1dfd5f25-49b5-48c8-87a8-a43894a7eb77)
+
 
 * 그래픽 드라이버 설치 및 재부팅
   ```bash
