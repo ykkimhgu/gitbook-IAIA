@@ -22,7 +22,8 @@ pip install opencv-python
 
 ### 2.1. With GPU
 
-Check GPU model & CUDA Environment from Website [CUDA Environment Wiki](https://en.wikipedia.org/wiki/CUDA)
+* Check GPU model & CUDA Environment from Website [CUDA Environment Wiki](https://en.wikipedia.org/wiki/CUDA)
+* Check GPU Driver (Troubleshooting)
 
 ```bash
 # Check GPU model & NVIDIA Driver
@@ -86,4 +87,37 @@ pip install torchsummary
     # libtiff 4.0으로 설치하기
     conda install -c conda-forge libtiff=4.0
     ```
+
+#### `nvidia-smi` 명령어 없다고 할 때
+
+* NVIDIA 그래픽카드가 없는 노트북이거나 그래픽 드라이버가 설치되지 않은 상황임.
+* 그래픽 드라이버 초기화 및 재설치 과정 수행해야함.
+* **그래픽 드라이버 재설치 시 recommended가 붙어있는 드라이브 설치 및 재부팅**
+* 드라이브 제거 및 재부팅 시 검은화면으로 부팅될 수 있으므로 주의
+
+* 기존 그래픽 드라이버 삭제
+  ```bash
+  sudo apt-get purge nvidia*
+  sudo apt-get autoremove
+  sudo apt-get autoclean
+  ```
+
+* 설치 가능한 드라이버 버전 확인
+  ```bash
+  ubuntu-drivers devices
+  ```
+
+  ![](https://github.com/user-attachments/assets/26f0cec3-1f43-4546-af9f-0b7aa9a743cc)
+
+* 그래픽 드라이버 설치 및 재부팅
+  ```bash
+  sudo add-apt-repository ppa:graphics-drivers/ppa
+  sudo apt update
+  sudo apt-cache search nvidia | grep nvidia-driver
+  
+  # sudo apt-get install nvidia-driver-[version]
+  sudo apt-get install nvidia-driver-550
+
+  sudo reboot
+  ```
 
