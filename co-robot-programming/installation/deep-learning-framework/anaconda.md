@@ -1,5 +1,6 @@
 # Anaconda 설치
 
+[reference link](https://latte-is-horse.tistory.com/2)
 ## 1. Anaconda Installer
 
 * Download anaconda Installer: [link](https://www.anaconda.com/download/success)
@@ -28,7 +29,7 @@ sudo bash Anaconda3-*.sh	# shell script 실행
 
   ![](https://github.com/user-attachments/assets/ed6c2b5d-1617-4dd4-88ca-ef75c2c4f2bd)
 
-  [reference link](https://latte-is-horse.tistory.com/2)
+
 
 * 설치 후 conda 버전 확인
 ```bash
