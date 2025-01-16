@@ -15,10 +15,28 @@ sudo bash Anaconda3-*.sh	# shell script 실행
 ```
 
 * 프로그램 설치 약관에 대한 내용 출력시, Enter를 계속해서 누르고 있으면 됨
-* 묻는 질문에는 모두 yes 입력
 
-[reference link](https://record-everything.tistory.com/entry/Ubuntu-2004-%EC%9A%B0%EB%B6%84%ED%88%AC%EC%97%90-%EC%95%84%EB%82%98%EC%BD%98%EB%8B%A4-%EC%84%A4%EC%B9%98-%EB%B0%8F-Python-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95)
+![](https://github.com/user-attachments/assets/08ea250f-35c0-4526-a71d-eafb2868f1f4)
 
+* 라이센스에 동의하는지 물어보면 "yes" 입력 및 엔터
+
+![](https://github.com/user-attachments/assets/96c3ac4c-af01-478d-9986-4da1b2a34151)
+
+* 설치경로 확인
+일반적으로 `home/usr/anaconda3` 경로로 생성됨.
+한번씩 root 경로에 설치되는데 그럴 때 `home/usr/anaconda3` 경로로 입력 및 엔터 누르기
+
+![](https://github.com/user-attachments/assets/ed6c2b5d-1617-4dd4-88ca-ef75c2c4f2bd)
+
+
+![](https://github.com/user-attachments/assets/585b65f0-2020-4596-9fb5-cb952ebc3503)
+
+[reference link](https://latte-is-horse.tistory.com/2)
+
+* 설치 후 conda 버전 확인
+```bash
+conda -V
+```
 
 ## 3. Initialize bashrc
 
