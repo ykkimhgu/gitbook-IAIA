@@ -84,7 +84,7 @@ pip install torchsummary
     ```
 
 
-## 5. Troubleshooting
+## 4. Troubleshooting
 
 #### Libtiff 버전 호환 문제
 
