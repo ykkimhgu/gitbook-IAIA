@@ -117,7 +117,7 @@ pip install torchsummary
   sudo apt-cache search nvidia | grep nvidia-driver
   
   # sudo apt-get install nvidia-driver-[version]
-  sudo apt-get install nvidia-driver-550
+  sudo apt-get install nvidia-driver-535
 
   sudo reboot
   ```
