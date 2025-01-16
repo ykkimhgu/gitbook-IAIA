@@ -31,7 +31,7 @@ sudo bash Anaconda3-*.sh	# shell script 실행
 
 
 
-* 설치 후 conda 버전 확인
+* 설치 후 터미널 재실행 후 conda 버전 확인
   ```bash
   conda -V
   ```
