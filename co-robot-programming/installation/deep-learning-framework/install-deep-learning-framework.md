@@ -61,18 +61,30 @@ pip install torchsummary
     # install rospkg, catkin_pkg
     conda install rospkg catkin_pkg
     ```
-*   환경변수: ROS python 라이브러리 경로 추가
+*   `~/.bashrc` setting: ROS python 라이브러리 경로 추가
 
     ```bash
     # 편집기 실행
     gedit ~/.bashrc
+    ```
 
+    ```bash
     # 환경변수 추가
     export PYTHONPATH=/opt/ros/noetic/lib/python3/dist-packages:$PYTHONPATH
+
+    # 자동으로 Anaconda 환경 활성화
+    function act_conda {
+        conda activate base
+        export PYTHONPATH=/opt/ros/noetic/lib/python3/dist-packages:~/catkin_ws/devel/lib/python3/dist-packages:~/anaconda3/envs/py38/lib/python3.8/site-packages
+        echo "conda activated"
+    }
+
+    # 별명 선언
+    alias py38='act_conda && conda activate py38'
     ```
 
 
-## 4. Troubleshooting
+## 5. Troubleshooting
 
 #### Libtiff 버전 호환 문제
 
