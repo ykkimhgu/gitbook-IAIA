@@ -69,7 +69,7 @@ if __name__ == '__main__':
         pass
 ```
 
-#### 2. `my_package/src` 폴더 내부에 `image_display.py` 파일 생성
+#### 2. `tutorial/src` 폴더 내부에 `image_display.py` 파일 생성
 
 ```python
 #!/usr/bin/env python3
@@ -108,7 +108,7 @@ if __name__ == '__main__':
         pass
 ```
 
-#### 3. `my_package/package.xml` 내용 추가
+#### 3. `tutorial/package.xml` 내용 추가
 
 ```xml
 <build_depend>sensor_msgs</build_depend>
@@ -119,7 +119,7 @@ if __name__ == '__main__':
 <exec_depend>cv_bridge</exec_depend>
 ```
 
-#### 4. `my_package/CMakeList.txt` 수정
+#### 4. `tutorial/CMakeList.txt` 수정
 
 ```cmake
 find_package(catkin REQUIRED COMPONENTS
@@ -152,8 +152,8 @@ catkin_make
 #### 6. 파이썬 스크립트에 대해 실행권한 허용.
 
 ```bash
-chmod +x ~/catkin_make/src/my_package/src/camera.py
-chmod +x ~/catkin_make/src/my_package/src/image_display.py
+chmod +x ~/catkin_ws/src/tutorial/src/camera.py
+chmod +x ~/catkin_ws/src/tutorial/src/image_display.py
 ```
 
 #### 7. 코드 실행
@@ -169,7 +169,7 @@ rqt_graph								# terminal 4
 
 ### 실습: Launch파일로 parameter 입력받도록 코드 수정하기
 
-#### 1. `my_package/launch` 폴더 내부에 `image_display.launch` 파일 생성하기
+#### 1. `tutorial/launch` 폴더 내부에 `image_display.launch` 파일 생성하기
 
 * `<arg ~ />`: 파라미터 변수 선언
 * `<param ~ />`: 파라미터 변수의 값을 할당하기
@@ -179,10 +179,10 @@ rqt_graph								# terminal 4
   <!-- Argument for the camera number, default to 0 -->
   <arg name="camera_number" default="0"/>
 
-  <node name="camera"           pkg="my_package" type="camera.py" output="screen">
+  <node name="camera"           pkg="tutorial" type="camera.py" output="screen">
     <param name="camera_number" value="$(arg camera_number)" />
   </node>
-  <node name="image_display"    pkg="my_package" type="image_display.py" output="screen"/>
+  <node name="image_display"    pkg="tutorial" type="image_display.py" output="screen"/>
   
 </launch>
 ```
