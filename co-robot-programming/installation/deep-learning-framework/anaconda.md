@@ -28,9 +28,6 @@ sudo bash Anaconda3-*.sh	# shell script 실행
 
 ![](https://github.com/user-attachments/assets/ed6c2b5d-1617-4dd4-88ca-ef75c2c4f2bd)
 
-
-![](https://github.com/user-attachments/assets/585b65f0-2020-4596-9fb5-cb952ebc3503)
-
 [reference link](https://latte-is-horse.tistory.com/2)
 
 * 설치 후 conda 버전 확인
