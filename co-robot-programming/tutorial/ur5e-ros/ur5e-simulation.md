@@ -1,121 +1,232 @@
 # UR5e Simulation
 
-## Program Structure
+UR5e 로봇에 대한 시뮬레이션 프로그램을 실행하는 실습을 진행합니다.
+
+- **실습구성** 
+  - Practice Movement Command
+  - Gripper Operation
+  - Basic Mission: Pick and Place
+  - Application Mission: Pet Feeder Robot with Camera
+
+
+
+* **주의사항**
+  * 시뮬레이션 모델에서는 end-effector(rg2-gripper, vaccum gripper)가 반영되어 있지 않습니다.
+  * 따라서, 실제 로봇 모델의 end-effector의 좌표와 다릅니다.
+
+
+
+### Program Structure
 
 ```bash
 catkin_ws/src
-├── ur_python
+└── ur_python
     ├── CMakeLists.txt
     ├── package.xml
-    ├── msg
+    └── msg
         ├── grip_command.msg
         ├── grip_state.msg
-        ├── object_info.msg
         ├── robot_state.msg
-    ├── src
+        └── pet_info.msg
+    └── src
         ├── move_group_python_interface.py
+        ├── ex1_move.py
+        ├── ex2_grip.py
+        ├── ex3_pick_and_place.py
+        ├── pet_feeder.py
         ├── camera.py
-        ├── image_processing.py
-        ├── demo_move.py
-        ├── demo_move_with_camera.py
-        ├── demo_pick_and_place.py
-        ├── demo_grip.py
-        ├── pet_classifier.py
-        └── pet_feeder.py
+        ├── image_display.py
+        └── pet_classifier.py
+├── ur_gazebo
 ├── ur5e_rg2_moveit_config
 └── rg2_description
 ```
 
 
-## Check Initialization in demo file
+
+### Check Initialization in example files
+
+<u>예제 파일에 시뮬레이션 모드로 설정되어 있는지 확인하세요.</u>
 
 ```python
 ur5e = MoveGroupPythonInterface(real="sim")
 ```
 
 
-## **주의사항**
-
-* 시뮬레이션 모델에는 실제 모델의 end-effector가 반영되어 있지 않음.
-* 실제 로봇 모델은 end-effector의 좌표를 기준으로 움직이는 것을 고려해야 함.
 
 
-## Demo 1: Simple Move
+
+### 1. Practice Movement Command
+
+
+
+#### 1.1. Terminal 명령
 
 ```bash
 roslaunch ur_gazebo ur5e_bringup.launch
 roslaunch ur5e_moveit_config moveit_planning_execution.launch sim:=true
-rosrun ur_python demo_move.py
+rosrun ur_python ex1_move.py
 ```
 
-### `demo_move.py`
+- **`ur_gazebo`**: gazebo 시뮬레이션 환경에서 UR robot을 불러올 수 있는 패키지
+- **`ur5e_moveit_config`**: UR5e 모델에 대한 주요 정보(컨트롤러, 경로 산출 함수, 파라미터 등)가 내장된 패키지
+  - **`moveit`**이라는 도구를 통해 **planning**과  **execution** 함수가 실행됨 (로봇팔의 경로를 계산하고 움직이게 함.)
+
+
+
+#### 1.2. 소스코드: `ex1_move.py`
 
 ```python
-  #!/usr/bin/env python3
-  #-*- coding:utf-8 -*- 
-  import rospy
-  import numpy as np
-  from move_group_python_interface import MoveGroupPythonInterface
-  from math import tau
-  
-  DEG2RAD = tau / 360.0
-  
-  def main():
-      try:
-  
-          ur5e = MoveGroupPythonInterface(real="sim")
-  
-          print("============ Moving initial pose using a joint state goal ...")
-          # ur5e.move_to_standby()
-          init_pose_joints = [tau/4, -tau/4, tau/4, -tau/4, -tau/4, 0.0]          # tau = 2 * pi
-          ur5e.go_to_joint_abs(init_pose_joints)
-  
-          input("============ Press `Enter` to execute a movement using a joint state goal(relative) ...")
-          joint_rel = [1/8 * tau, 0, 0, 0, 0, 0]          # tau = 2 * pi
-          ur5e.go_to_joint_rel(joint_rel)
-          
-          input("============ Press `Enter` to execute a movement using a joint state goal(relative) ...")
-          joint_rel = [-1/8 * tau, 0, 0, 0, 0, 0]          # tau = 2 * pi
-          ur5e.go_to_joint_rel(joint_rel)
-  
-          input("============ Press `Enter` to execute a movement using a relative pose ...")
-          target_pose_rel_xyz = [0.0, 0.0, 0.0]
-          target_pose_rel_rpy = [tau/8, 0, 0]
-          ur5e.go_to_pose_rel(target_pose_rel_xyz, target_pose_rel_rpy)
-                  
-          input("============ Press `Enter` to execute a movement using a relative pose ...")
-          target_pose_rel_xyz = [0.0, 0.0, 0.0]
-          target_pose_rel_rpy = [-tau/8, 0, 0]
-          ur5e.go_to_pose_rel(target_pose_rel_xyz, target_pose_rel_rpy)
-          
-          input("============ Press `Enter` to execute a movement using a absolute pose ...")
-          target_pose_abs_xyz = [-0.13, 0.49, 0.47]
-          target_pose_abs_rpy = [-2.3939, -0.00, -0.00]
-          ur5e.go_to_pose_abs(target_pose_abs_xyz, target_pose_abs_rpy)
-  
-          
-          print("============ complete!")
-  
-      except rospy.ROSInterruptException:
-          return
-      except KeyboardInterrupt:
-          print("Shut down by Key Interrupt")
-          return
-  
-  if __name__ == "__main__":
-      main()
+#!/usr/bin/env python3
+#-*- coding:utf-8 -*- 
+import rospy
+import numpy as np
+from move_group_python_interface import MoveGroupPythonInterface
+from math import tau
+
+DEG2RAD = tau / 360.0
+
+def main():
+  try:
+
+      ur5e = MoveGroupPythonInterface(real="sim")
+
+      print("============ Moving initial pose using a joint state goal ...")
+      # ur5e.move_to_standby()
+      init_pose_joints = [tau/4, -tau/4, tau/4, -tau/4, -tau/4, 0.0]          # tau = 2 * pi
+      ur5e.go_to_joint_abs(init_pose_joints)
+
+      input("============ Press `Enter` to execute a movement using a joint state goal(relative) ...")
+      joint_rel = [1/8 * tau, 0, 0, 0, 0, 0]          # tau = 2 * pi
+      ur5e.go_to_joint_rel(joint_rel)
+
+      input("============ Press `Enter` to execute a movement using a joint state goal(relative) ...")
+      joint_rel = [-1/8 * tau, 0, 0, 0, 0, 0]          # tau = 2 * pi
+      ur5e.go_to_joint_rel(joint_rel)
+
+      input("============ Press `Enter` to execute a movement using a relative pose ...")
+      target_pose_rel_xyz = [0.0, 0.0, 0.0]
+      target_pose_rel_rpy = [tau/8, 0, 0]
+      ur5e.go_to_pose_rel(target_pose_rel_xyz, target_pose_rel_rpy)
+
+      input("============ Press `Enter` to execute a movement using a relative pose ...")
+      target_pose_rel_xyz = [0.0, 0.0, 0.0]
+      target_pose_rel_rpy = [-tau/8, 0, 0]
+      ur5e.go_to_pose_rel(target_pose_rel_xyz, target_pose_rel_rpy)
+
+      input("============ Press `Enter` to execute a movement using a absolute pose ...")
+      target_pose_abs_xyz = [-0.13, 0.49, 0.47]
+      target_pose_abs_rpy = [-2.3939, -0.00, -0.00]
+      ur5e.go_to_pose_abs(target_pose_abs_xyz, target_pose_abs_rpy)
+
+
+      print("============ complete!")
+
+  except rospy.ROSInterruptException:
+      return
+  except KeyboardInterrupt:
+      print("Shut down by Key Interrupt")
+      return
+
+if __name__ == "__main__":
+  main()
 ```
 
 
-## Demo 2: Pick & Place
+
+#### 1.3. 소스코드 분석하기
+
+**MoveGroupPythonInterface()**: ur5e 로봇팔에 움직임 명령을 주는 인터페이스 역할을 하는 클래스로서, `move_group_python_interface.py` 파일에 정의됨.
+
+<u>아래는 로봇팔을 움직이게 하는 명령어(함수) 목록이며, 각각 원리가 다릅니다. 그 원리를 파악해보세요.</u>
+
+- go_to_joint_abs()
+- go_to_joint_rel()
+- go_to_pose_abs()
+- go_to_pose_rel()
+
+
+
+<u>위 함수목록 내부에 공통적으로 내장된 구문 및 메세지 정보를 파악하고, 왜 필요한 것인지 분석하세요.</u>
+
+
+
+
+
+### 2. Gripper Operation
+
+<u>그리퍼 동작은 로봇과 연결된 후, 진행 가능합니다.</u>
+
+#### 2.1. Terminal 명령
+
+```bash
+roslaunch ur_robot_driver ur5e_bringup.launch robot_ip:=192.168.0.2
+roslaunch ur5e_rg2_moveit_config move_group.launch
+rosrun ur_python ex2_grip.py
+```
+
+
+
+#### 2.2. 소스코드: `ex2_grip.py`
+
+```python
+#! /usr/bin/env python3
+#-*- coding:utf-8 -*- 
+
+import rospy
+from move_group_python_interface import MoveGroupPythonInterface
+from math import tau
+
+def main():
+    try:
+
+        ur5e = MoveGroupPythonInterface()
+
+        input("============ Press `Enter` to execute a movement using a joint state goal ...")
+        target_joints = [tau/4, -tau/4, tau/4, -tau/4, -tau/4, 0.0]          # tau = 2 * pi
+        ur5e.go_to_joint_abs(target_joints)
+
+        input("============ Press `Enter` to grip on ...")
+        ur5e.grip_on()
+
+        input("============ Press `Enter` to grip off ...")
+        ur5e.grip_off()
+
+        print("============ Python tutorial demo complete!")
+
+    except rospy.ROSInterruptException:
+        return
+    except KeyboardInterrupt:
+        print("Shut down by Key Interrupt")
+        return
+
+if __name__ == '__main__':
+    main()
+```
+
+
+
+#### 2.3. 소스코드 분석하기
+
+<u>grip_on()과 grip_off() 함수를 분석해보세요</u>
+
+
+
+
+
+### 3. Basic Mission: Pick & Place
+
+#### 3.1. Terminal 명령
 
 ```bash
 roslaunch ur_gazebo ur5e_bringup.launch
 roslaunch ur5e_moveit_config moveit_planning_execution.launch sim:=true
-rosrun ur_python demo_pick_and_place.py
+rosrun ur_python ex2_pick_and_place.py
 ```
 
-### `demo_pick_and_place.py`
+
+
+#### 3.2. 소스코드: `ex3_pick_and_place.py`
 
 ```python
 #!/usr/bin/env python3
@@ -195,18 +306,31 @@ if __name__ == '__main__':
 ```
 
 
-## Demo 3: Pet Feeder Robot
+
+#### 3.3. 소스코드 분석하기
+
+<u>기본적인 미션인 pick & place의 의미를 생각하며, 위 코드의 구성 및 배치가 어떻게 되어있는지 분석하세요.</u>
+
+
+
+
+
+### 4. Application Mission: Pet Feeder Robot with Camera
+
+#### 4.1. Terminal 명령
 
 ```bash
 roslaunch ur_gazebo ur5e_bringup.launch
 roslaunch ur5e_moveit_config moveit_planning_execution.launch sim:=true
 rosrun ur_python camera.py
 rosrun ur_python image_display.py
-rosrun ur_python pet_classifier.py  # conda environment
+rosrun ur_python pet_classifier.py  # 딥러닝 사용가능한 terminal 환경으로
 rosrun ur_python pet_feeder.py
 ```
 
-### `camera.py`
+
+
+#### 4.2. 소스코드: `camera.py`
 
 ```python
 #!/usr/bin/env python3
@@ -254,7 +378,9 @@ if __name__ == '__main__':
       pass
 ```
 
-### `image_display.py`
+
+
+#### 4.3. 소스코드: `image_display.py`
 
 ```python
 #!/usr/bin/env python3
@@ -293,7 +419,9 @@ except rospy.ROSInterruptException:
     pass
 ```
 
-### `pet_classifier.py`
+
+
+#### 4.4. 소스코드: `pet_classifier.py`
 
 ```python
 #!/usr/bin/env python3
@@ -440,7 +568,9 @@ except rospy.ROSInterruptException:
     pass
 ```
 
-### `pet_feeder.py`
+
+
+#### 4.5. 소스코드: `pet_feeder.py`
 
 ```python
 #!/usr/bin/env python3
@@ -529,3 +659,15 @@ except rospy.ROSInterruptException:
     pass
 
 ```
+
+
+
+#### 4.6. 소스코드 분석하기
+
+<u>`rqt_graph`를 통해 노드와 토픽간 주고 받는 정보의 흐름을 파악해보세요.</u>
+
+- 카메라 센서로부터 취득된 정보는 무엇인지
+- 이미지 정보가 어디로 전달되는지
+- 이미지 정보로부터 어떤 정보를 생성하는지
+- 생성된 정보가 로봇팔에 어떻게 전달되는지
+
