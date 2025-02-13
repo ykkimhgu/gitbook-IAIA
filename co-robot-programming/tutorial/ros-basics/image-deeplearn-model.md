@@ -1,7 +1,8 @@
 # 이미지 딥러닝 모델 연동 예제
 
-* ROS와 pytorch를 연동하여 프로그램을 실행시키는 예제
-* 예제명: Image Classifier
+ROS와 pytorch를 연동하는 것을 연습하는 예제로, 이미지 분류 모델을 활용한다.
+
+
 
 ### Program Structure
 
@@ -10,17 +11,14 @@ catkin_ws/src
 └── my_package
     ├── CMakeLists.txt
     ├── msg
-    │   └── Person.msg
     ├── package.xml
     └── src
-        ├── custom_publisher.cpp
-        ├── custom_publisher.py
-        ├── custom_subscriber.cpp
-        ├── custom_subscriber.py
         ├── camera.py
         ├── image_display.py
         └── image_classifier.py
 ```
+
+
 
 ### 딥러닝 프레임워크 구축 및 설정 참고
 
@@ -166,6 +164,7 @@ chmod +x ~/catkin_ws/src/my_package/src/image_classifier.py
 # terminal 1
 act_ros		# 환경세팅
 roscore
+
 # terminal 2
 # 환경세팅 (선택1) act_ros / (선택2) py38
 rosrun my_package camera.py

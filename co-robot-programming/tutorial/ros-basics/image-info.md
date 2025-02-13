@@ -13,20 +13,17 @@ catkin_ws/src
 └── my_package
     ├── CMakeLists.txt
     ├── msg
-    │   └── Person.msg
     ├── package.xml
     └── src
-        ├── custom_publisher.cpp
-        ├── custom_publisher.py
-        ├── custom_subscriber.cpp
-        ├── custom_subscriber.py
         ├── camera.py
         └── image_display.py
 ```
 
+
+
 ### 실습: 이미지 정보 생성/출력
 
-#### 1. `tutorial/src` 폴더 내부에 `camera.py` 파일 생성
+#### 1. `my_packag/src` 폴더 내부에 `camera.py` 파일 생성
 
 ```python
 #!/usr/bin/env python3
@@ -71,7 +68,7 @@ if __name__ == '__main__':
 
 
 
-#### 2. `tutorial/src` 폴더 내부에 `image_display.py` 파일 생성
+#### 2. `my_package/src` 폴더 내부에 `image_display.py` 파일 생성
 
 ```python
 #!/usr/bin/env python3
@@ -112,7 +109,7 @@ if __name__ == '__main__':
 
 
 
-#### 3. `tutorial/package.xml` 내용 추가
+#### 3. `my_package/package.xml` 내용 추가
 
 ```xml
 <build_depend>sensor_msgs</build_depend>
@@ -125,7 +122,7 @@ if __name__ == '__main__':
 
 
 
-#### 4. `tutorial/CMakeList.txt` 수정
+#### 4. `my_package/CMakeList.txt` 수정
 
 ```cmake
 find_package(catkin REQUIRED COMPONENTS
@@ -162,8 +159,8 @@ catkin_make
 #### 6. 파이썬 스크립트에 대해 실행권한 허용.
 
 ```bash
-chmod +x ~/catkin_ws/src/tutorial/src/camera.py
-chmod +x ~/catkin_ws/src/tutorial/src/image_display.py
+chmod +x ~/catkin_ws/src/my_package/src/camera.py
+chmod +x ~/catkin_ws/src/my_package/src/image_display.py
 ```
 
 
@@ -172,8 +169,8 @@ chmod +x ~/catkin_ws/src/tutorial/src/image_display.py
 
 ```bash
 roscore									# terminal 1
-rosrun tutorial camera.py				# terminal 2
-rosrun tutorial image_display.py		# terminal 3
+rosrun my_package camera.py				# terminal 2
+rosrun my_package image_display.py		# terminal 3
 rqt_graph								# terminal 4
 ```
 
@@ -183,7 +180,7 @@ rqt_graph								# terminal 4
 
 ### 실습: Launch파일로 parameter 입력받도록 코드 수정하기
 
-#### 1. `tutorial/launch` 폴더 내부에 `image_display.launch` 파일 생성하기
+#### 1. `my_package/launch` 폴더 내부에 `image_display.launch` 파일 생성하기
 
 * `<arg ~ />`: 파라미터 변수 선언
 * `<param ~ />`: 파라미터 변수의 값을 할당하기
@@ -193,10 +190,10 @@ rqt_graph								# terminal 4
   <!-- Argument for the camera number, default to 0 -->
   <arg name="camera_number" default="0"/>
 
-  <node name="camera"           pkg="tutorial" type="camera.py" output="screen">
+  <node name="camera"           pkg="my_package" type="camera.py" output="screen">
     <param name="camera_number" value="$(arg camera_number)" />
   </node>
-  <node name="image_display"    pkg="tutorial" type="image_display.py" output="screen"/>
+  <node name="image_display"    pkg="my_package" type="image_display.py" output="screen"/>
   
 </launch>
 ```
@@ -257,7 +254,7 @@ if __name__ == '__main__':
 #### 3. launch 파일 실행
 
 ```bash
-roslaunch tutorial image_display.launch camera_number:=0
+roslaunch my_package image_display.launch camera_number:=0
 ```
 
 
@@ -334,7 +331,7 @@ rqt_graph
 *   현재, 여러 노드와 토픽이 생성된 것을 확인할 수 있음. 특히,`/camera/image_raw`토픽은 우리가 알고 있는 msg\_type이므로, subscribing 가능
 
     ```bash
-    rosrun tutorial image_display.py
+    rosrun my_package image_display.py
     ```
 
     ![](https://user-images.githubusercontent.com/91526930/235361805-789a28b5-9876-4041-9d36-c523611271b3.png)
