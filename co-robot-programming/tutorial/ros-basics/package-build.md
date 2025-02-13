@@ -1,10 +1,12 @@
 # Package Build
 
-## 1. Work Space 생성
+### 1. Work Space 생성
 
 * ROS에서 워크스페이스는 프로젝트 파일, 페키지 등을 관리하는 기본 작업 디렉토리
 
-### 1.1. 디렉토리 생성
+
+
+#### 1.1. 디렉토리 생성
 
 ```bash
 mkdir -p ~/catkin_ws/src
@@ -12,7 +14,9 @@ mkdir -p ~/catkin_ws/src
 
 * `catkin_ws`는 워크스페이스 이름이며, 원하는 이름으로 변경 가능
 
-### 1.2. 워크스페이스 초기화
+
+
+#### 1.2. 워크스페이스 초기화
 
 ```bash
 cd ~/catkin_ws
@@ -22,7 +26,9 @@ catkin_make
 * `catkin_make`를 실행하면 `build/`, `devel/` 디렉토리가 생성됨
 * `devel/`은 빌드된 파일이 저장되는 경로
 
-### 1.3. 환경 설정
+
+
+#### 1.3. 환경 설정
 
 ```bash
 source devel/setup.bash
@@ -35,8 +41,10 @@ source devel/setup.bash
     echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
     source ~/.bashrc
     ```
+    
+    
 
-### 1.4. 워크스페이스 확인
+#### 1.4. 워크스페이스 확인
 
 ```bash
 echo $ROS_PACKAGE_PATH
@@ -44,7 +52,9 @@ echo $ROS_PACKAGE_PATH
 
 * ROS가 현재 워크스페이스를 인식하고 있는지 확인
 
-## 2. ROS Build System
+
+
+### 2. ROS Build System
 
 * **Catkin**은 ROS의 빌드 시스템이다.
 * CMake(Cross Platform Make)를 기본적으로 이용.
@@ -54,17 +64,27 @@ echo $ROS_PACKAGE_PATH
 
 **reference**: [ROS의 빌드시스템](https://velog.io/@717lumos/ROS-%ED%8C%A8%ED%82%A4%EC%A7%80-%EB%B9%8C%EB%93%9C%EC%99%80-%EB%85%B8%EB%93%9C-%EC%9E%91%EC%84%B1)
 
-### 2.1. 패키지 빌드 과정
+
+
+#### 2.1. 패키지 빌드 과정
 
 1\) 패키지 생성
+
 2\) 패키지 설정 파일(`package.xml`) 수정
+
 3\) 빌드 설정 파일(`CMakeList.txt`) 수정
+
 4\) 메시지 파일 작성
+
 5\) 소스 코드 작성
+
 6\) 빌드 전 처리
+
 7\) 노드 실행
 
-### 2.2. 빌드 해야하는 상황
+
+
+#### 2.2. 빌드 해야하는 상황
 
 * 새로운 패키지를 추가했을 때
   * Work Space에 새로운 ROS 패키지를 생성, 추가한 경우
@@ -78,13 +98,17 @@ echo $ROS_PACKAGE_PATH
 * 새로운 메세지/서비스 타입을 정의했을 때
   * 새로운 메세지(`.msg`)나 서비스(`.srv`) 파일을 수정한 경우
 
-#### Tip: 빌드가 필요 없는 경우
+
+
+##### Tip: 빌드가 필요 없는 경우
 
 * ROS 파라미터나 `launch` 파일만 수정한 경우
 
-## 3. 기본 명령어
 
-### 3.1. 파일 및 경로 관련 명령어
+
+### 3. 기본 명령어
+
+#### 3.1. 파일 및 경로 관련 명령어
 
 * 현재 ROS 패키지 경로 이동
   * 특정 패키지의 루트 디렉토리로 바로 이동함
@@ -100,7 +124,9 @@ roscd [package_name]
 rospack find [package_name]
 ```
 
-### 3.2. 실행 관련 명령어
+
+
+#### 3.2. 실행 관련 명령어
 
 * 노드 실행
   * 특정 패키지의 노드를 실행
@@ -116,7 +142,9 @@ rosrun [package_name] [node_name]
 roslaunch [package_name] [launch_file]
 ```
 
-### 3.3. 상태 확인 명령어
+
+
+#### 3.3. 상태 확인 명령어
 
 * 노드 정보 확인
 
@@ -137,7 +165,9 @@ rostopic list
 rostopic echo [topic_name]
 ```
 
-### 3.4. 디버깅 명령어
+
+
+#### 3.4. 디버깅 명령어
 
 * rqt 도구 실행
   * GUI 기반의 ROS 디버깅 및 모니터링 도구 실행
@@ -153,7 +183,9 @@ rqt
 rqt_graph
 ```
 
-## 4. 노드와 토픽 개념
+
+
+#### 4. 노드와 토픽 개념
 
 ROS 통신 시스템의 기본 구성요소인 노드(Node)와 토픽(Topic)에 대한 설명을 위한 자료임.
 
@@ -198,7 +230,7 @@ ROS 통신 시스템의 기본 구성요소인 노드(Node)와 토픽(Topic)에 
         * 'listener'라는 노드를 `init_node`를 통해 초기화한다.
         * 'chatter'라는 String 형태의 msg 정보를 subscribing하고, callback함수를 실행한다.
         * callback 함수는 data를 받아서, terminal 창에 출력한다.
-  
+    
     *   `talker.py`
 
         ![](https://user-images.githubusercontent.com/91526930/234398302-2ef57b3a-b3d7-4d62-966b-13475a1e5971.png)
@@ -207,7 +239,7 @@ ROS 통신 시스템의 기본 구성요소인 노드(Node)와 토픽(Topic)에 
         * 'talker'라는 노드를 초기화한다.
         * hello\_str에는 String 형태의 정보를 생산 및 할당한다.
         * publish 함수를 통해 hello\_str 변수를 publishing 한다.
-  
+    
     *   std\_msgs
 
         * [ROS Wiki - std\_msgs](http://wiki.ros.org/std_msgs)
@@ -216,7 +248,9 @@ ROS 통신 시스템의 기본 구성요소인 노드(Node)와 토픽(Topic)에 
 
         ![](https://user-images.githubusercontent.com/91526930/234399565-051b3c6f-2160-4341-a715-0a4e2f4b68e4.png)
 
-## 5. ROS Package
+
+
+### 5. ROS Package
 
 *   ROS에서 공식적으로 제공하는 pacakge는 보통 다음과 같은 명령어를 통해 설치됨.
 
@@ -234,7 +268,9 @@ ROS 통신 시스템의 기본 구성요소인 노드(Node)와 토픽(Topic)에 
 
 ![](https://user-images.githubusercontent.com/91526930/235362934-a74b67f4-0026-4bf7-96af-aaeec117a5f3.png)
 
-## 6. 외부 패키지 설치 방법
+
+
+### 6. 외부 패키지 설치 방법
 
 * ROS에서 공식적으로 만들어서 제공하는 package는 아니지만, 특정 회사나 개인이 만들어 package를 github를 통해 배포하는 경우가 있음.
 * ROS 인증받은 package의 경우, 아래와 같이 설치할 수 있음.

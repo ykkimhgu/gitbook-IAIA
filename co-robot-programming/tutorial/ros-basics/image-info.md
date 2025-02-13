@@ -69,6 +69,8 @@ if __name__ == '__main__':
         pass
 ```
 
+
+
 #### 2. `tutorial/src` 폴더 내부에 `image_display.py` 파일 생성
 
 ```python
@@ -108,6 +110,8 @@ if __name__ == '__main__':
         pass
 ```
 
+
+
 #### 3. `tutorial/package.xml` 내용 추가
 
 ```xml
@@ -118,6 +122,8 @@ if __name__ == '__main__':
 <exec_depend>sensor_msgs</exec_depend>
 <exec_depend>cv_bridge</exec_depend>
 ```
+
+
 
 #### 4. `tutorial/CMakeList.txt` 수정
 
@@ -142,12 +148,16 @@ catkin_package(
 )
 ```
 
+
+
 #### 5. 패키지 빌드
 
 ```bash
 [위치] ~/catkin_ws
 catkin_make
 ```
+
+
 
 #### 6. 파이썬 스크립트에 대해 실행권한 허용.
 
@@ -156,16 +166,20 @@ chmod +x ~/catkin_ws/src/tutorial/src/camera.py
 chmod +x ~/catkin_ws/src/tutorial/src/image_display.py
 ```
 
+
+
 #### 7. 코드 실행
 
 ```bash
 roscore									# terminal 1
-rosrun tutorial camera.py			# terminal 2
+rosrun tutorial camera.py				# terminal 2
 rosrun tutorial image_display.py		# terminal 3
 rqt_graph								# terminal 4
 ```
 
 ![](https://user-images.githubusercontent.com/91526930/235357562-126a214d-7139-4701-8e90-07a87a32ca53.png)
+
+
 
 ### 실습: Launch파일로 parameter 입력받도록 코드 수정하기
 
@@ -186,6 +200,8 @@ rqt_graph								# terminal 4
   
 </launch>
 ```
+
+
 
 #### 2. `camera.py` 수정하기
 
@@ -236,11 +252,15 @@ if __name__ == '__main__':
         pass
 ```
 
+
+
 #### 3. launch 파일 실행
 
 ```bash
 roslaunch tutorial image_display.launch camera_number:=0
 ```
+
+
 
 ### 실습: USB Camera 연결
 
@@ -260,13 +280,15 @@ roslaunch tutorial image_display.launch camera_number:=0
     v4l2-ctl --list-devices       # 카메라 포트 확인
     ```
 
+
+
 #### 2. 카메라 포트 반영: `camera.py`
 
 ```python
 self.cap = cv2.VideoCapture(1)          # usb camera에 해당하는 포트 반영(e.g. 1)
 ```
 
-####
+
 
 ### 실습: 머신비전용 카메라: Pointgrey Camera
 
@@ -285,6 +307,8 @@ sudo apt-get install ros-noetic-pointgrey-camera-driver
 sudo apt-get update
 ```
 
+
+
 #### 2. 카메라 인식
 
 ```bash
@@ -295,6 +319,8 @@ rosrun pointgrey_camera_driver list_cameras    # Terminal 2
 ![](https://user-images.githubusercontent.com/91526930/235361466-d02e984e-1d5d-402c-8a77-4bc341d13c3e.png)
 
 **인식이 잘 안될 경우, USB 다시 연결 또는 재부팅 시도**
+
+
 
 #### 3. 작동 확인
 

@@ -13,6 +13,8 @@
 * 퍼블리셔(Publisher)와 서브스크라이버(Subscriber)를 통해 데이터가 교환됩니다.
 * 예: 카메라 노드가 `/camera/image_raw` 토픽을 통해 이미지 데이터를 퍼블리싱하고, 이를 처리하는 노드가 해당 데이터를 서브스크라이브.
 
+
+
 ### 실습: TurtleSim
 
 #### 1. ROS 노드 실행
@@ -22,6 +24,8 @@
 ```bash
 roscore
 ```
+
+
 2\)  **Turtlesim 노드 실행**:
 
 ```bash
@@ -30,6 +34,8 @@ rosrun turtlesim turtlesim_node
 
 * GUI 창이 열리며 거북이가 나타납니다.
 
+
+
 3\)  **Turtlesim 제어 노드 실행**:
 
 ```bash
@@ -37,6 +43,8 @@ rosrun turtlesim turtle_teleop_key
 ```
 
 * 키보드를 사용하여 거북이를 이동시킬 수 있습니다.
+
+
 
 #### 2. 토픽 확인 및 데이터 송수신
 
@@ -48,6 +56,8 @@ rostopic list
 
 * 실행 중인 모든 토픽 목록이 출력됩니다.
 
+
+
 2\)  **특정 토픽의 데이터 확인**:
 
 ```bash
@@ -56,6 +66,8 @@ rostopic echo /turtle1/cmd_vel
 
 * `/turtle1/cmd_vel` 토픽에서 퍼블리싱되는 데이터를 실시간으로 확인.
 
+
+
 3\)  **토픽에 데이터 퍼블리싱**:
 
 ```bash
@@ -63,6 +75,8 @@ rostopic pub /turtle1/cmd_vel geometry_msgs/Twist '{linear: {x: 2.0}, angular: {
 ```
 
 * 거북이가 지정된 속도로 움직입니다.
+
+
 
 #### 3. rqt\_graph를 통한 노드와 토픽 간 관계 확인
 
@@ -73,6 +87,8 @@ rqt_graph
 ```
 
 * 노드와 토픽 간의 관계를 시각적으로 확인할 수 있는 그래프가 표시됩니다.
+
+
 
 2\)  **노드와 토픽 구분**
 
@@ -92,38 +108,46 @@ rqt_graph
 
 #### 1. 노드와 토픽 실행
 
-1\)  launch 파일 실행
+1\)  **launch 파일 실행**
 
 ```bash
 roslaunch rospy_tutorials talker_listener.launch
 ```
 
-2\)  실행 결과
+
+
+2\)  **실행 결과**
 
 * talker가 생성한 내용을 listener가 메시지로 받아서 화면에 출력한다.
 
 ![](https://user-images.githubusercontent.com/91526930/234394784-a24bfbb2-8f10-443e-b23d-f5dafda2532e.png)
 
 
-3\)  노드와 토픽 관찰하기
+
+3\)  **노드와 토픽 관찰하기**
 
 ![](https://user-images.githubusercontent.com/91526930/234394161-ca099b10-639c-466d-9162-7fe709a4a39a.png)
 
+
+
 #### 2. 관련 코드 확인하기
 
-1\)  Tutorial 폴더 접근
+1\)  **Tutorial 폴더 접근**
 
 ```bash
 roscd rospy_tutorials
 code .
 ```
 
-2\)  폴더 구성 확인
+
+
+2\)  **폴더 구성 확인**
 
 * `.launch`와 `.py` 로 구성되어 있음.
 
 ![](https://user-images.githubusercontent.com/91526930/234396103-730b952f-d540-4871-b962-3101a73b3778.png)
     
+
 3\)  `talker_listener.launch`
 
 * 두 개의 node를 실행하는 것으로 구성됨.
@@ -131,6 +155,7 @@ code .
 
 ![](https://user-images.githubusercontent.com/91526930/234396233-154876be-05dc-4bba-b92e-f6e1e1acc233.png)
     
+
 4\)  `listener.py`
 
 ![](https://user-images.githubusercontent.com/91526930/234396748-210f85b3-f6da-42a1-8e1e-434460f27045.png)
@@ -138,7 +163,10 @@ code .
 * 'listener'라는 노드를 `init_node`를 통해 초기화한다.
 * 'chatter'라는 String 형태의 msg 정보를 subscribing하고, callback함수를 실행한다.
 * callback 함수는 data를 받아서, terminal 창에 출력한다.
-    
+  
+
+
+
 5\)  `talker.py`
 
 ![](https://user-images.githubusercontent.com/91526930/234398302-2ef57b3a-b3d7-4d62-966b-13475a1e5971.png)
@@ -147,6 +175,10 @@ code .
 * 'talker'라는 노드를 초기화한다.
 * hello\_str에는 String 형태의 정보를 생산 및 할당한다.
 * publish 함수를 통해 hello\_str 변수를 publishing 한다.
+
+
+
+
 
 ### 요약
 

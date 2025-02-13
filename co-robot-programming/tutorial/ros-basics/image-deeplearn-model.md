@@ -22,13 +22,15 @@ catkin_ws/src
         └── image_classifier.py
 ```
 
-### 딥러닝 프레임워크 구축
+### 딥러닝 프레임워크 구축 및 설정 참고
 
-#### 1. Anaconda 설치
+#### 1. [Anaconda 설치](../../installation/deep-learning-framework/anaconda.md)
 
-#### 2. 딥러닝 프래임워크 설치
+#### 2. [딥러닝 프래임워크 설치](../../installation/deep-learning-framework/install-deep-learning-framework.md)
 
-#### 3. bashrc 세팅
+#### 3. [bashrc 세팅](../../installation/ubuntu/ubuntu-bashrc.md)
+
+
 
 ### 실습: 이미지 분류하기
 
@@ -128,7 +130,7 @@ if __name__ == '__main__':
         pass
 ```
 
-####
+
 
 #### 2. 빌드
 
@@ -140,17 +142,23 @@ act_ros				# ros환경 활성화 (bashrc 사용자 정의 함수)
 catkin_make
 ```
 
+
+
 #### 3. 초기화
 
 ```bash
 source ~/.bashrc 	# 또는 act_ros
 ```
 
+
+
 #### 4. 실행권한 부여
 
 ```bash
 chmod +x ~/catkin_ws/src/my_package/src/image_classifier.py
 ```
+
+
 
 #### 5. 프로그램 실행
 
@@ -171,4 +179,3 @@ py38	# 환경세팅
 rosrun my_package image_classifier.py
 ```
 
-​
