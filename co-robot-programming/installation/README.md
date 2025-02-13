@@ -4,7 +4,7 @@ Let's set up the collaborative robot programming environment following the steps
 
 
 <details>
-<summary>Ubuntu Installation</summary>
+<summary>Ubuntu</summary>
 
 [Ubuntu 설치](./ubuntu/ubuntu-install.md)
 
@@ -18,7 +18,7 @@ Let's set up the collaborative robot programming environment following the steps
 
 
 <details>
-<summary>ROS  Installation</summary>
+<summary>ROS </summary>
 
 [ROS 설치](./ros/ros-install.md)
 
@@ -28,7 +28,7 @@ Let's set up the collaborative robot programming environment following the steps
 
 
 <details>
-<summary>Deep learning framework Installation</summary>
+<summary>Deep learning framework</summary>
 
 [Anaconda 설치](./deep-learning-framework/anaconda.md)
 
