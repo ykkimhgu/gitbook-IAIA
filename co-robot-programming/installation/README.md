@@ -5,21 +5,21 @@ Let's set up the collaborative robot programming environment following the steps
 
 ### [Ubuntu](./ubuntu)
 
-- [Ubuntu 설치](./ubuntu/ubuntu-install.md)
-- [Ubuntu-Windows 시간 동기화](./ubuntu/ubuntu-timesync.md)
-- [Bashrc 세팅](./ubuntu/ubuntu-bashrc.md)
-- [유틸프로그램 설치](./ubuntu/ubuntu-util.md)
+- [우분투 설치](./ubuntu/ubuntu-install.md)
+- [우분투-윈도우 시간 동기화 설정](./ubuntu/ubuntu-timesync.md)
+- [bashrc 세팅](./ubuntu/ubuntu-bashrc.md)
+- [유틸 프로그램 설치](./ubuntu/ubuntu-util.md)
 
 
 
 ### [ROS](./ros)
 
 - [ROS 설치](./ros/ros-install.md)
-- [협동로봇 관련 패키지 불러오기](./ros/ros-packages-for-robots.md)
+- [ROS Packages for Robots](./ros/ros-packages-for-robots.md)
 
 
 
 ### [Deep Learning Framework](./deep-learning-framework)
 
 - [Anaconda 설치](./deep-learning-framework/anaconda.md)
-- [딥러닝 프레임워크 설치](./deep-learning-framework/install-deep-learning-framework.md)
+- [Install Deep Learning Framework](./deep-learning-framework/install-deep-learning-framework.md)
