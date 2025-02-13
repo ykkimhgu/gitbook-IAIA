@@ -27,12 +27,12 @@
 
 아래는 문자열 데이터를 퍼블리싱하는 간단한 Python 퍼블리셔 노드 예제입니다:
 
-##### `src/my_package/simple_publisher.py`
+##### `src/my_package/ex1_publisher.py`
 ```python
 import rospy
 from std_msgs.msg import String
 
-rospy.init_node('simple_publisher')
+rospy.init_node('ex1_publisher')
 pub = rospy.Publisher('chatter', String, queue_size=10)
 rate = rospy.Rate(1)  # 1 Hz
 while not rospy.is_shutdown():
@@ -47,8 +47,8 @@ while not rospy.is_shutdown():
 퍼블리셔 노드를 실행하려면 파일에 실행 권한을 부여하고 실행합니다:
 
 ```bash
-chmod +x src/my_package/simple_publisher.py
-rosrun my_package simple_publisher.py
+chmod +x src/my_package/ex1_publisher.py
+rosrun my_package ex1_publisher.py
 ```
 
 
@@ -73,7 +73,7 @@ data: "Hello, ROS!"
 
 아래는 퍼블리싱된 문자열 데이터를 구독하는 Python 서브스크라이버 노드 예제입니다:
 
-##### `src/my_package/simple_subscriber.py`
+##### `src/my_package/ex1_subscriber.py`
 ```python
 import rospy
 from std_msgs.msg import String
@@ -81,7 +81,7 @@ from std_msgs.msg import String
 def callback(data):
     rospy.loginfo(f"I heard: {data.data}")
 
-rospy.init_node('simple_subscriber')
+rospy.init_node('ex1_subscriber')
 sub = rospy.Subscriber('chatter', String, callback)
 rospy.spin()
 ```
@@ -93,8 +93,8 @@ rospy.spin()
 파일에 실행 권한을 부여한 후 실행합니다:
 
 ```bash
-chmod +x src/my_package/simple_subscriber.py
-rosrun my_package simple_subscriber.py
+chmod +x src/my_package/ex1_subscriber.py
+rosrun my_package ex1_subscriber.py
 ```
 
 
@@ -107,7 +107,7 @@ rosrun my_package simple_subscriber.py
 rqt_graph
 ```
 
-* 노드 `simple_publisher`와 `simple_subscriber`가 토픽 `chatter`를 통해 연결된 그래프를 확인할 수 있습니다.
+* 노드 `ex1_publisher`와 `ex1_subscriber`가 토픽 `chatter`를 통해 연결된 그래프를 확인할 수 있습니다.
 
 
 
@@ -117,7 +117,7 @@ rqt_graph
 
 아래는 문자열 데이터를 퍼블리싱하는 간단한 C++ 퍼블리셔 노드 예제입니다:
 
-##### `src/my_package/src/simple_publisher.cpp`
+##### `src/my_package/src/ex1_publisher.cpp`
 ```cpp
 #include "ros/ros.h"
 #include "std_msgs/String.h"
@@ -125,7 +125,7 @@ rqt_graph
 
 int main(int argc, char **argv)
 {
-    ros::init(argc, argv, "simple_publisher");
+    ros::init(argc, argv, "ex1_publisher");
     ros::NodeHandle n;
 
     ros::Publisher pub = n.advertise<std_msgs::String>("chatter", 1000);
@@ -154,7 +154,7 @@ int main(int argc, char **argv)
 
 아래는 퍼블리싱된 문자열 데이터를 구독하는 간단한 C++ 서브스크라이버 노드 예제입니다:
 
-##### `src/my_package/src/simple_subscriber.cpp`
+##### `src/my_package/src/ex1_subscriber.cpp`
 ```cpp
 #include "ros/ros.h"
 #include "std_msgs/String.h"
@@ -166,7 +166,7 @@ void chatterCallback(const std_msgs::String::ConstPtr& msg)
 
 int main(int argc, char **argv)
 {
-    ros::init(argc, argv, "simple_subscriber");
+    ros::init(argc, argv, "ex1_subscriber");
     ros::NodeHandle n;
 
     ros::Subscriber sub = n.subscribe("chatter", 1000, chatterCallback);
@@ -183,11 +183,11 @@ int main(int argc, char **argv)
 `CMakeLists.txt` 파일에 새 노드를 추가합니다:
 
 ```cmake
-add_executable(simple_publisher src/simple_publisher.cpp)
-target_link_libraries(simple_publisher ${catkin_LIBRARIES})
+add_executable(ex1_publisher src/ex1_publisher.cpp)
+target_link_libraries(ex1_publisher ${catkin_LIBRARIES})
 
-add_executable(simple_subscriber src/simple_subscriber.cpp)
-target_link_libraries(simple_subscriber ${catkin_LIBRARIES})
+add_executable(ex1_subscriber src/ex1_subscriber.cpp)
+target_link_libraries(ex1_subscriber ${catkin_LIBRARIES})
 ```
 
 
@@ -204,8 +204,8 @@ catkin_make
 #### 5. 노드 실행
 
 ```bash
-rosrun my_package simple_publisher
-rosrun my_package simple_subscriber
+rosrun my_package ex1_publisher
+rosrun my_package ex1_subscriber
 ```
 
 
@@ -251,12 +251,12 @@ rqt_graph
 *   **Python**:
 
     ```bash
-    rosrun my_package simple_publisher.py
+    rosrun my_package ex1_publisher.py
     ```
 *   **C++**:
 
     ```bash
-    rosrun my_package simple_publisher
+    rosrun my_package ex1_publisher
     ```
 
 

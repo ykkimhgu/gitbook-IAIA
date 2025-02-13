@@ -1,21 +1,24 @@
 # 빌드 시스템
 
-### 1. 빌드 시스템 개념
+### 1. 기본 개념
 
-#### **ROS에서** `catkin_make`**의 역할**
+#### catkin은 ROS의 빌드 시스템이다
 
-* `catkin_make`는 ROS 워크스페이스의 빌드 시스템으로, 노드와 메시지 파일을 포함한 프로젝트 구성 요소를 컴파일하고 실행 가능한 상태로 준비합니다.
+- **빌드**: ROS 워크스페이스의 프로젝트 구성 요소를 컴파일하고 실행 가능한 상태로 준비하는 작업을 수행
+- **`catkin_make`** 명령어를 통해 ROS 워크스페이스를 빌드
+- CMake를 이용하여, ROS 환경에 알맞게 Catkin 빌드 시스템이 구축되어 있음
+- ROS 관련 빌드, 패키지 관리, 패키지 간 의존성 등을 편리하게 사용 가능
 
 
 
-#### **CMakeLists.txt와 package.xml의 기능과 상호작용**
+#### **CMakeLists.txt와 package.xml의 기능**
 
 1. **CMakeLists.txt**:
-   * 빌드 시스템에 필요한 설정을 정의합니다.
-   * 소스 파일, 메시지 파일, 실행 파일 등을 포함시킵니다.
+   * 빌드 시스템에 필요한 설정 정의
+   * 소스 파일, 메시지 파일, 실행 파일 등을 포함됨
 2. **package.xml**:
-   * 패키지의 의존성을 관리합니다.
-   * 메시지 파일이나 라이브러리에 대한 의존성을 명시합니다.
+   * 패키지의 의존성 관리
+   * 메시지 파일이나 라이브러리에 대한 의존성 명시
 
 
 
@@ -30,25 +33,26 @@
 
 
 
-### 2. 전체 빌드 흐름
+### 2. 빌드 실행 조건 및 수정 흐름
 
-#### Python 기반 노드의 빌드 흐름
+#### 2.1. 노드를 새로 정의한 경우
 
-1. `package.xml`에 의존성을 추가합니다.
-2. 실행 권한을 부여한 후 노드를 실행합니다.
+##### 2.1.1. python 기반 노드
+
+1. `package.xml`에 의존성 추가
+2. `catkin_make` 실행
+3. 실행 권한을 부여한 후 노드 실행
+
+##### 2.1.2. C++ 기반 노드
+
+1. `CMakeLists.txt`에 소스 파일 및 메시지 설정 추가
+2. `package.xml`에 의존성 추가
+3. `catkin_make` 실행
+4. 생성된 헤더 파일을 활용하여 노드 작성 및 실행
 
 
 
-#### C++ 기반 노드의 빌드 흐름
-
-1. `CMakeLists.txt`에 소스 파일 및 메시지 설정 추가.
-2. `package.xml`에 의존성 추가.
-3. `catkin_make` 실행.
-4. 생성된 헤더 파일을 활용하여 노드 작성 및 실행.
-
-
-
-#### Msg 파일 추가 시의 빌드 흐름
+#### 2.2. Msg 파일 추가/수정한 경우
 
 1. **Msg 파일 정의**: 프로젝트에 필요한 메시지 파일 작성.
 2. **CMakeLists.txt와 package.xml 수정**: Msg 파일을 빌드 과정에 포함.
@@ -57,7 +61,7 @@
 
 
 
-### 3. 실습: 빌드 과정 통합
+### 3. 실습: 빌드 흐름 익히기
 
 1. `Person.msg` **수정**:
    *   `msg/Person.msg` 파일에 새로운 필드를 추가합니다:
@@ -101,8 +105,8 @@
     cd ~/catkin_ws
     catkin_make
     
-    rosrun my_package custom_publisher
-    rosrun my_package custom_subscriber
+    rosrun my_package ex2_publisher
+    rosrun my_package ex2_subscriber
     ```
 
 

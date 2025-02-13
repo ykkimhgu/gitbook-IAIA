@@ -48,17 +48,17 @@ Launch 파일은 XML 형식으로 작성되며, `<launch>` 태그 안에 실행�
 
 #### 1. Launch 파일 생성
 
-ROS 워크스페이스의 `launch` 디렉토리를 생성하고 `custom_nodes.launch` 파일을 작성합니다:
+ROS 워크스페이스의 `launch` 디렉토리를 생성하고 `ex_nodes.launch` 파일을 작성합니다:
 
 ```bash
 mkdir -p ~/catkin_ws/src/my_package/launch
 cd ~/catkin_ws/src/my_package/launch
-touch custom_nodes.launch
+touch ex_nodes.launch
 ```
 
 #### 2. Launch 파일 작성
 
-`custom_nodes.launch` 파일을 열고 아래 내용을 작성합니다:
+`ex_nodes.launch` 파일을 열고 아래 내용을 작성합니다:
 
 ```xml
 <launch>
@@ -66,16 +66,18 @@ touch custom_nodes.launch
     <param name="global_param" value="common_value" />
 
     <!-- 퍼블리셔 노드 실행 -->
-    <node pkg="my_package" type="custom_publisher.py" name="publisher_node" output="screen">
+    <node pkg="my_package" type="ex2_publisher.py" name="publisher_node" output="screen">
         <param name="publish_rate" value="2" />
     </node>
 
     <!-- 서브스크라이버 노드 실행 -->
-    <node pkg="my_package" type="custom_subscriber.py" name="subscriber_node" output="screen" />
+    <node pkg="my_package" type="ex2_subscriber.py" name="subscriber_node" output="screen" />
 </launch>
 ```
 
 #### 3. 퍼블리셔 수정
+
+`ex2_publisher.py`
 
 ```python
 rate_value = rospy.get_param('~publish_rate', 1)  # 기본값 1 Hz
@@ -87,7 +89,7 @@ rate = rospy.Rate(1.0/rate_value)   # Hz
 Launch 파일을 실행하여 퍼블리셔와 서브스크라이버를 동시에 실행합니다:
 
 ```bash
-roslaunch my_package custom_nodes.launch
+roslaunch my_package ex_nodes.launch
 ```
 
 #### 5. 실행 결과 확인
