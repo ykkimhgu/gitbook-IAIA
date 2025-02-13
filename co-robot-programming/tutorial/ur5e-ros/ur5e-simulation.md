@@ -24,8 +24,6 @@ catkin_ws/src
     ├── CMakeLists.txt
     ├── package.xml
     └── msg
-        ├── grip_command.msg
-        ├── grip_state.msg
         ├── robot_state.msg
         └── pet_info.msg
     └── src
@@ -221,7 +219,7 @@ if __name__ == '__main__':
 ```bash
 roslaunch ur_gazebo ur5e_bringup.launch
 roslaunch ur5e_moveit_config moveit_planning_execution.launch sim:=true
-rosrun ur_python ex2_pick_and_place.py
+rosrun ur_python ex3_pick_and_place.py
 ```
 
 
