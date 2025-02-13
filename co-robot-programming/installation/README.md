@@ -6,6 +6,10 @@ Let's set up the collaborative robot programming environment following the steps
 
 ### [Ubuntu](ubuntu/)
 
+<details>
+<summary>Ubuntu Installation</summary>
+
+
 {% content-ref url="ubuntu/ubuntu-install.md" %}
 [ubuntu/ubuntu-install.md](ubuntu/ubuntu-install.md)
 {% endcontent-ref %}
@@ -28,12 +32,12 @@ Let's set up the collaborative robot programming environment following the steps
 [ubuntu/ubuntu-util.md](ubuntu/ubuntu-util.md)
 {% endcontent-ref %}
 
-
-
+</details>
 
 
 ### [ROS](ros/)
-
+<details>
+<summary>ROS  Installation</summary>
 {% content-ref url="ros/ros-install.md" %}
 [ros/ros-install.md](ros/ros-install.md)
 {% endcontent-ref %}
@@ -44,9 +48,13 @@ Let's set up the collaborative robot programming environment following the steps
 [ros/ros-packages-for-robots.md](ros/ros-packages-for-robots.md)
 {% endcontent-ref %}
 
+</details>
 
 
 ### [Deep Learning Framework](deep-learning-framework/)
+
+<details>
+<summary>Deep learning framework Installation</summary>
 
 {% content-ref url="deep-learning-framework/anaconda.md" %}
 [deep-learning-framework/anaconda.md](deep-learning-framework/anaconda.md)
@@ -57,3 +65,5 @@ Let's set up the collaborative robot programming environment following the steps
 {% content-ref url="deep-learning-framework/install-deep-learning-framework.md" %}
 [deep-learning-framework/install-deep-learning-framework.md](deep-learning-framework/install-deep-learning-framework.md)
 {% endcontent-ref %}
+
+</details>
