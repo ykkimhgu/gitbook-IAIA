@@ -18,15 +18,15 @@
 - [ROS란 무엇인가?](./ros-basics/ros.md)
 - [Work Space](./ros-basics/work-space.md)
 - [ROS 기본 명령어](./ros-basics/ros-1.md)
-- [패키지](./ros-basics/undefined.md)
+- [패키지](./ros-basics/package.md)
 - [Node, Topic](./ros-basics/node-topic.md)
 - [Msg 파일](./ros-basics/msg.md)
-- [빌드 시스템](./ros-basics/undefined-1.md)
+- [빌드 시스템](./ros-basics/build-system.md)
 - [Launch](./ros-basics/launch.md)
 - [Package Build](./ros-basics/package-build.md)
 - [Publisher와 Subscriber](./ros-basics/publisher-subscriber.md)
-- [이미지 정보 생성/불러오기](./ros-basics/undefined-2.md)
-- [이미지 딥러닝 모델 연동 예제](./ros-basics/undefined-3.md)
+- [이미지 정보 생성/불러오기](./ros-basics/image-info.md)
+- [이미지 딥러닝 모델 연동 예제](./ros-basics/image-deeplearn-model.md)
 
 </details>
 
