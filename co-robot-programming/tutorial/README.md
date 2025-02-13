@@ -3,7 +3,7 @@
 
 
 <details>
-<summary> [Ubuntu Basics](./ubuntu-basics/)  </summary>
+<summary> Ubuntu Basics </summary>
 
 - [Linux OS와 Ubuntu](./ubuntu-basics/linux-os-ubuntu.md)
 - [GUI와 CLI](./ubuntu-basics/gui-cli.md)
@@ -13,7 +13,7 @@
 </details>
 
 <details>
-<summary> [ROS basics](./ros-basics/)</summary>
+<summary> ROS basics</summary>
 
 - [ROS란 무엇인가?](./ros-basics/ros.md)
 - [Work Space](./ros-basics/work-space.md)
@@ -31,7 +31,7 @@
 </details>
 
 <details>
-<summary>[UR5e-ROS Demo](./ur5e-ros/)</summary>
+<summary>UR5e-ROS Demo</summary>
 
 - [UR5e Simulation](./ur5e-ros/ur5e-simulation.md)
 - [UR5e Connection](./ur5e-ros/ur5e-connection.md)
@@ -41,7 +41,7 @@
 
 
 <details>
-<summary>[Indy10-ROS Demo](./indy10-ros/)</summary>
+<summary>Indy10-ROS Demo</summary>
 
 - [Indy10-ROS Demo](./indy10-ros/)
 - [Indy10 Simulation](./indy10-ros/indy10-simulation.md)
