@@ -3,19 +3,20 @@
 Let's set up the collaborative robot programming environment following the steps below.
 
 
-<details open>
-<summary>Ubuntu</summary>
+{% collapsible title="Ubuntu" %}
+- [Ubuntu 설치](./ubuntu/ubuntu-install.md)
+- [Ubuntu-Windows 시간 동기화](./ubuntu/ubuntu-timesync.md)
+- [Bashrc 세팅](./ubuntu/ubuntu-bashrc.md)
+- [유틸프로그램 설치](./ubuntu/ubuntu-util.md)
+{% endcollapsible %}
 
-[Ubuntu 설치](./ubuntu/ubuntu-install.md)
 
-[Ubuntu-Windows 시간 동기화](./ubuntu/ubuntu-timesync.md)
+### Ubuntu
 
-[Bashrc 세팅](./ubuntu/ubuntu-bashrc.md)
-
-[유틸프로그램 설치](./ubuntu/ubuntu-util.md)
-
-</details>
-
+- [Ubuntu 설치](./ubuntu/ubuntu-install.md)
+- [Ubuntu-Windows 시간 동기화](./ubuntu/ubuntu-timesync.md)
+- [Bashrc 세팅](./ubuntu/ubuntu-bashrc.md)
+- [유틸프로그램 설치](./ubuntu/ubuntu-util.md)
 
 <details open>
 <summary>ROS </summary>
