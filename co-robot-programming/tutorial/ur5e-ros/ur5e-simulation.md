@@ -40,6 +40,8 @@ catkin_ws/src
 └── rg2_description
 ```
 
+패키지가 없으면, [ROS Packages for Robots](../../installation/ros/ros-packages-for-robots.md) 자료내용 참고
+
 
 
 ### Check Initialization in example files
